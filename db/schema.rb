@@ -10,10 +10,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_16_202804) do
+ActiveRecord::Schema.define(version: 2021_02_18_184953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "codewars_profiles", force: :cascade do |t|
+    t.string "user_name"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_codewars_profiles_on_user_id"
+  end
+
+  create_table "learning_groups", force: :cascade do |t|
+    t.string "slack_channel"
+    t.bigint "path_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["path_id"], name: "index_learning_groups_on_path_id"
+  end
+
+  create_table "paths", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "requirement"
+    t.string "language"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "step_progresses", force: :cascade do |t|
+    t.boolean "completion", default: false
+    t.bigint "step_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "path_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["path_id"], name: "index_step_progresses_on_path_id"
+    t.index ["step_id"], name: "index_step_progresses_on_step_id"
+    t.index ["user_id"], name: "index_step_progresses_on_user_id"
+  end
+
+  create_table "steps", force: :cascade do |t|
+    t.string "url"
+    t.text "description"
+    t.string "title"
+    t.string "step_type"
+    t.integer "duration"
+    t.bigint "path_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["path_id"], name: "index_steps_on_path_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +76,21 @@ ActiveRecord::Schema.define(version: 2021_02_16_202804) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "users_learning_groups", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "learning_group_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["learning_group_id"], name: "index_users_learning_groups_on_learning_group_id"
+    t.index ["user_id"], name: "index_users_learning_groups_on_user_id"
+  end
+
+  add_foreign_key "codewars_profiles", "users"
+  add_foreign_key "learning_groups", "paths"
+  add_foreign_key "step_progresses", "paths"
+  add_foreign_key "step_progresses", "steps"
+  add_foreign_key "step_progresses", "users"
+  add_foreign_key "steps", "paths"
+  add_foreign_key "users_learning_groups", "learning_groups"
+  add_foreign_key "users_learning_groups", "users"
 end
