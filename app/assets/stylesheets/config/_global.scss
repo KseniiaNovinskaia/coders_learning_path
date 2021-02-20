@@ -1,0 +1,55 @@
+h1{
+  font-size: 45px;
+  font-family: K2D;
+  line-height: 45px;
+  color: $text-color;
+}
+
+body {
+  background-color: $bg-white;
+}
+
+h2 {
+  font-size: 35px;
+  font-family: K2D;
+}
+
+h3 {
+  font-size: 24px;
+  font-family: K2D;
+  color: $text-color;
+}
+
+h4 {
+  font-size: 240px;
+  font-family: K2D;
+  color: $text-color;
+}
+
+h5 {
+ font-size: 30px;
+ font-family: Roboto;
+ font-weight: bold;
+ color: $text-color;
+}
+
+h6 {
+  font-size: 25px;
+  font-family: Roboto;
+  font-weight: bold;
+  color: $text-color;
+}
+
+p {
+  font-size: 18px;
+  font-family: Roboto;
+  line-height: 29px;
+  color: $text-color;
+}
+
+.title {
+font-family: Space Mono;
+font-size: 46px;
+font-weight: bold;
+color: $text-color;
+}
