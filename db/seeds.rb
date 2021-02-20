@@ -10,7 +10,10 @@ p = Path.create!(
       name: 'Full Stack Developer',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla. Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget. Cras ac eu ut urna purus, varius nisl tincidunt velit. Dictumst sed sit massa mattis facilisi molestie sed quisque. Enim aenean nec semper a, tempor eget pharetra tristique viverra.',
       requirement: 'beginner',
-      language: ['ruby', 'javascript', 'html', 'css', 'rails'])
+      language: 'ruby javascript html css rails'
+      )
+
+p "Created the PATH 'Full Stack Developer'!"
 
 12.times do
   Step.create!(
@@ -22,3 +25,40 @@ p = Path.create!(
     duration: 45
     )
 end
+
+p "Added 12 identical STEPs to the path!"
+
+lg = LearningGroup.create!(
+  path_id: p.id,
+  slack_channel: '#clp'
+  )
+
+p "Initialized a LEARNING_GROUP, associated to the path with the slack channel '#clp'"
+
+Step.all.each_with_index do |step, i|
+  StepProgress.create!(
+    user_id: User.first.id,
+    step_id: step.id,
+    completion: i < 6,
+    path_id: p.id
+    )
+end
+
+p "Defined the STEP_PROGRESS for each step for one user (the first user in the db)"
+
+UsersLearningGroup.create!(
+  user_id: User.first.id,
+  learning_group_id: lg.id
+  )
+
+p "Created a USERS_LEARNING_GROUP consisting of the first user and the learning group"
+
+CodewarsProfile.create!(
+  user_name: 'jasonheeps',
+  user_id: User.first.id
+  )
+
+p "Added a CODEWARS_PROFILE"
+p "-------------------------"
+p "--- seeding complete! ---"
+p "-------------------------"
