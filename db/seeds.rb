@@ -10,7 +10,6 @@ p "Clearing the db first..."
 
 User.destroy_all
 Path.destroy_all
-CodewarsProfile.destroy_all
 
 p "db clear! Ready for seeding!"
 
@@ -46,7 +45,7 @@ p "Added 12 identical STEPs to the path!"
 
 lg = LearningGroup.create!(
   path_id: p.id,
-  slack_channel: '#clp'
+  slack_channel: '#full-stack-development-01'
   )
 
 p "Initialized a LEARNING_GROUP, associated to the path with the slack channel '#clp'"
