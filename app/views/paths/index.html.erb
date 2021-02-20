@@ -1,0 +1,9 @@
+<h1>Hello paths</h1>
+
+<% @paths.each do |path| %>
+  <h6><%= path.name %></h6>
+  <p><%= path.description %></p>
+  <p style="font-size: 14px;"><%= path.requirement %></p>
+  <p style="font-size: 10px;"><%= path.language %></p>
+
+<% end %>
