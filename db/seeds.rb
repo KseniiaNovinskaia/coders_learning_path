@@ -48,7 +48,7 @@ lg = LearningGroup.create!(
   slack_channel: '#full-stack-development-01'
   )
 
-p "Initialized a LEARNING_GROUP, associated to the path with the slack channel '#clp'"
+p "Initialized a LEARNING_GROUP, associated to the path with the slack channel '#{lg.slack_channel}'"
 
 Step.all.each_with_index do |step, i|
   StepProgress.create!(
