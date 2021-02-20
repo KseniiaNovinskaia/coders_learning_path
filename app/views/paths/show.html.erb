@@ -6,12 +6,15 @@
 
   <div class="path-show-page-middle-container">
      <%#= render 'shared/progress_bar' %>
-    <p>Test</p>
+     <div class="steps-container">
+        <% @steps.each do |step| %>
+          <%= render 'shared/step_card_closed' %>
+        <% end %>
+     </div>
   </div>
 
-  <div class="container-right">
-    <p>Test</p>
-  </div>
+<!--   <div class="container-right">
+  </div> -->
 
 </div>
 
