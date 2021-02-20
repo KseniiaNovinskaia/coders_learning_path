@@ -14,7 +14,7 @@ Path.destroy_all
 p "db clear! Ready for seeding!"
 
 u = User.create!(
-      name: 'Sarah'
+      name: 'Sarah',
       email: 'sarah@gmail.com',
       password: '123456',
     )
