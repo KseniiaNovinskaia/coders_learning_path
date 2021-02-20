@@ -6,6 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+p "Clearing the db first..."
+
+User.destroy_all
+Path.destroy_all
+CodewarsProfile.destroy_all
+
+p "db clear! Ready for seeding!"
+
+u = User.create!(
+      name: 'Sarah'
+      email: 'sarah@gmail.com',
+      password: '123456',
+    )
+
+p "Created the USER '#{u.name}', email: '#{u.email}', password: '123456'"
+
 p = Path.create!(
       name: 'Full Stack Developer',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla. Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget. Cras ac eu ut urna purus, varius nisl tincidunt velit. Dictumst sed sit massa mattis facilisi molestie sed quisque. Enim aenean nec semper a, tempor eget pharetra tristique viverra.',
@@ -13,7 +29,7 @@ p = Path.create!(
       language: 'ruby javascript html css rails'
       )
 
-p "Created the PATH 'Full Stack Developer'!"
+p "Created the PATH #{p.name}!"
 
 12.times do
   Step.create!(
@@ -37,7 +53,7 @@ p "Initialized a LEARNING_GROUP, associated to the path with the slack channel '
 
 Step.all.each_with_index do |step, i|
   StepProgress.create!(
-    user_id: User.first.id,
+    user_id: User.find_by(name: u.name).id,
     step_id: step.id,
     completion: i < 6,
     path_id: p.id
@@ -47,7 +63,7 @@ end
 p "Defined the STEP_PROGRESS for each step for one user (the first user in the db)"
 
 UsersLearningGroup.create!(
-  user_id: User.first.id,
+  user_id: User.find_by(name: u.name).id,
   learning_group_id: lg.id
   )
 
@@ -55,7 +71,7 @@ p "Created a USERS_LEARNING_GROUP consisting of the first user and the learning 
 
 CodewarsProfile.create!(
   user_name: 'jasonheeps',
-  user_id: User.first.id
+  user_id: User.find_by(name: u.name).id
   )
 
 p "Added a CODEWARS_PROFILE"
