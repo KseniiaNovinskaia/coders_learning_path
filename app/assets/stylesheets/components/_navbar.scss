@@ -13,5 +13,17 @@
 
 .nav-left {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+}
+
+.centered-nav {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+
+.navbar-h3 {
+  font-size: 24px;
+  font-family: $headers-font;
+  color: $text-color;
 }
