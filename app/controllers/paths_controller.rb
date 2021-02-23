@@ -1,6 +1,8 @@
 class PathsController < ApplicationController
+
   def index
-    @paths = Path.all
+    @paths = policy_scope(Path)
+    # @paths = Path.all
   end
 
   def show
