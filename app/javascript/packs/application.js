@@ -22,6 +22,10 @@ require("channels")
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
+// https://github.com/rails/jquery-rails
+//= require jquery
+//= require jquery_ujs
+
 // External imports
 import "bootstrap";
 
