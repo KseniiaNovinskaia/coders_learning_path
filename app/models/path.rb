@@ -10,4 +10,12 @@ class Path < ApplicationRecord
     end
     hourly_sum
   end
+
+  def duration_hours
+    self.duration / 60
+  end
+
+  def duration_minutes
+    self.duration % 60
+  end
 end
