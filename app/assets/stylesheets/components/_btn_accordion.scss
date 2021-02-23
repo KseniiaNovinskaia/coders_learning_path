@@ -1,1 +1,27 @@
-_btn_accordion.scss
+.btn-accordion-link-wrapper {
+  &:hover {
+    text-decoration: none;
+  }
+  &:hover .btn-accordion {
+    opacity: 0.85;
+  }
+}
+
+.btn-accordion {
+  width: 165px;
+  height: 46px;
+  background-color: $alert;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-accordion-text {
+  text-decoration: none;
+  color: white;
+  font-family: $body-font;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+
