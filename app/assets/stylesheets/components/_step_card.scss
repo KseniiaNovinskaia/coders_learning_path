@@ -1,0 +1,45 @@
+.step-card-closed-part {
+  width: 100%;
+  height: 124px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #D1D3D4;
+}
+
+.step-card-logo {
+  padding: 0 34px;
+  .logo {
+    color: $alert;
+    // color: #CCCCCC; this one for collapsed
+    font-size: 70px;
+  }
+}
+
+.step-card-text {
+
+  .completion {
+    margin-bottom: 0;
+  }
+}
+
+.step-card-expand-icon {
+  color: $alert;
+  // color: #CCCCCC; this one for collapsed
+  font-size: 52px;
+  margin-right: 34px;
+  margin-left: auto;
+  // transform: rotate(270deg);
+}
+
+.step-card-expanded-part {
+  display: flex;
+  background-color: $cb-white;
+  padding-left: 140px;
+  padding-right: 36px;
+  padding-top: 36px;
+  border: 1px solid $text-color;
+}
+
+.btn-accordion {
+  margin-left: 300px;
+}
