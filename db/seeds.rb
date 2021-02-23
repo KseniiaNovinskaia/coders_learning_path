@@ -17,18 +17,40 @@ u = User.create!(
       name: 'Sarah',
       email: 'sarah@gmail.com',
       password: '123456',
-    )
+      )
 
 p "Created the USER '#{u.name}', email: '#{u.email}', password: '123456'"
 
-p = Path.create!(
-      name: 'Full Stack Developer',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla. Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget. Cras ac eu ut urna purus, varius nisl tincidunt velit. Dictumst sed sit massa mattis facilisi molestie sed quisque. Enim aenean nec semper a, tempor eget pharetra tristique viverra.',
-      requirement: 'beginner',
-      language: 'ruby javascript html css rails'
-      )
+  p = Path.create!(
+        name: 'Full Stack Developer',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla. Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget. Cras ac eu ut urna purus, varius nisl tincidunt velit. Dictumst sed sit massa mattis facilisi molestie sed quisque. Enim aenean nec semper a, tempor eget pharetra tristique viverra.',
+        requirement: 'beginner',
+        language: 'ruby javascript html css rails'
+        )
+  p "Created the PATH #{p.name}!"
 
-p "Created the PATH #{p.name}!"
+  Path.create!(
+    name: 'ML Developer',
+   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla. Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget. Cras ac eu ut urna purus, varius nisl tincidunt velit. Dictumst sed sit massa mattis facilisi molestie sed quisque. Enim aenean nec semper a, tempor eget pharetra tristique viverra.',
+   requirement: 'intermediate',
+   language: 'python'
+   )
+
+  Path.create!(
+    name: 'Data Analyst',
+   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla. Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget. Cras ac eu ut urna purus, varius nisl tincidunt velit. Dictumst sed sit massa mattis facilisi molestie sed quisque. Enim aenean nec semper a, tempor eget pharetra tristique viverra.',
+   requirement: 'advanced',
+   language: 'intermediate'
+   )
+
+  Path.create!(
+    name: 'iOS Developer',
+   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla. Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget. Cras ac eu ut urna purus, varius nisl tincidunt velit. Dictumst sed sit massa mattis facilisi molestie sed quisque. Enim aenean nec semper a, tempor eget pharetra tristique viverra.',
+   requirement: 'advanced',
+   language: 'swift'
+   )
+
+  p "Created three more PATHs!"
 
 12.times do
   Step.create!(
@@ -44,9 +66,9 @@ end
 p "Added 12 identical STEPs to the path!"
 
 lg = LearningGroup.create!(
-  path_id: p.id,
-  slack_channel: '#full-stack-development-01'
-  )
+      path_id: p.id,
+      slack_channel: '#full-stack-development-01'
+      )
 
 p "Initialized a LEARNING_GROUP, associated to the path with the slack channel '#{lg.slack_channel}'"
 
