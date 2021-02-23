@@ -37,6 +37,9 @@ gem 'simple_form'
 # authorization
 gem 'pundit'
 
+# https://github.com/rails/jquery-rails
+gem 'jquery-rails'
+
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'

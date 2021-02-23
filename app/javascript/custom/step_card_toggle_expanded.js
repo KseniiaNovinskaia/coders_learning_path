@@ -1,5 +1,8 @@
-// const stepCard = document.getElementById("step-card") this doesnt work
+// @toggleExpanded = (element) ->
+//   element.classList.toggle("expanded")
 
-stepCard.addEventListener('click', (event) => {
-  stepCard.classList.toggle("expanded");
-});
+// stepCard.addEventListener('click', (event) => {
+//   stepCard.classList.toggle("expanded");
+// });
+
+// tbe Philipp
