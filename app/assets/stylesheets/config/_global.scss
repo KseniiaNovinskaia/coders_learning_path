@@ -53,3 +53,7 @@ font-size: 46px;
 font-weight: bold;
 color: $text-color;
 }
+
+.logo {
+  transform: rotate(270deg) scaleY(-1) !important;
+}
