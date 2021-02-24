@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
 
 p "Clearing the db first..."
 
@@ -27,6 +28,10 @@ p "Created the USER '#{u.name}', email: '#{u.email}', password: '123456'"
         requirement: 'beginner',
         language: 'ruby javascript html css rails'
         )
+  file = URI.open('https://res.cloudinary.com/dqopwdgta/image/upload/v1614164368/Index/FULL_STACK_DEVELOPER_pmau6g.svg')
+  p.photo.attach(io: file, filename: 'FULL_STACK_DEVELOPER_pmau6g.svg', content_type: 'image/svg')
+
+
   p "Created the PATH #{p.name}!"
 
   Path.create!(
@@ -35,6 +40,8 @@ p "Created the USER '#{u.name}', email: '#{u.email}', password: '123456'"
    requirement: 'intermediate',
    language: 'python'
    )
+  file = URI.open('https://res.cloudinary.com/dqopwdgta/image/upload/v1614164367/Index/ML_developer_gidze2.svg')
+  p.photo.attach(io: file, filename: 'ML_developer_gidze2.svg', content_type: 'image/svg')
 
   Path.create!(
     name: 'Data Analyst',
@@ -42,6 +49,8 @@ p "Created the USER '#{u.name}', email: '#{u.email}', password: '123456'"
    requirement: 'advanced',
    language: 'intermediate'
    )
+  file = URI.open('https://res.cloudinary.com/dqopwdgta/image/upload/v1614164367/Index/DATA_ANALYST_ieyk54.svg')
+  p.photo.attach(io: file, filename: 'DATA_ANALYST_ieyk54.svg', content_type: 'image/svg')
 
   Path.create!(
     name: 'iOS Developer',
@@ -49,6 +58,8 @@ p "Created the USER '#{u.name}', email: '#{u.email}', password: '123456'"
    requirement: 'advanced',
    language: 'swift'
    )
+  file = URI.open('https://res.cloudinary.com/dqopwdgta/image/upload/v1614164366/Index/ANDROID_DEVELOPER_g9nc7l.svg')
+  p.photo.attach(io: file, filename: 'ANDROID_DEVELOPER_g9nc7l.svg', content_type: 'image/svg')
 
   p "Created three more PATHs!"
 
