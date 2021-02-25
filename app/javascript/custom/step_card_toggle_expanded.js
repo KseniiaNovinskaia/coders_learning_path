@@ -13,8 +13,9 @@ const initStepCardEventListener = () => {
       expandedPart.classList.toggle('step-card-expanded-part-expanded');
         // console.log(expandedPart);
 
-      let expandIcon = StepCard.getElementsByClassName('step-card-expand-icon')[0];
-      expandIcon.classList.toggle('.step-card-expand-icon-expanded');
+      let expandIcon = stepCard.getElementsByClassName('step-card-expand-icon')[0];
+      console.log(expandIcon);
+      expandIcon.classList.toggle('step-card-expand-icon-expanded');
   });
   }
 };
