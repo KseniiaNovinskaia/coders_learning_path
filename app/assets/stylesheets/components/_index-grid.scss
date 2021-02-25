@@ -1,4 +1,3 @@
-// with grid everywhere
 .parent {
   display: flex;
 }
@@ -16,33 +15,4 @@
 .parent-div-3 {
   align-self: flex-end;
 }
-
-// .item-assistant {
-//   grid-column-start: 4;
-//   grid-column-end: five;
-//   grid-row-start: row2-start;
-//   grid-row-end: 3;
-//   align-content: end;
-// }
-
-// with flex box all aroung (parent) and grid only in the central div (div2)
-
-// .parent {
-//   display: flex;
-//   width: 1920px;
-//   height: 1021px;
-// }
-
-// .div2 {
-//   display: grid;
-//   grid-template-columns: 356px 356px;
-//   grid-template-rows: 419px auto;
-//   grid-column-gap: 41px;
-//   grid-row-gap: 60px;
-//   align-items: start;
-// }
-
-// .div3 {
-//   align-self: end;
-// }
 
