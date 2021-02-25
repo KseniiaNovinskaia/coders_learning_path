@@ -1,51 +1,18 @@
 .parent {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 38px;
-  grid-row-gap: 38px;
-}
-
-.div1 { grid-area: 1 / 1 / 6 / 2; }
-.div2 { grid-area: 1 / 2 / 6 / 4; }
-.div3 { grid-area: 1 / 4 / 6 / 5; }
-
-.item-text {
-  grid-column-start: 1;
-  grid-column-end: two;
-  grid-row-start: row1-start;
-  grid-row-end: 2;
-}
-
-// .item-card-sm-sx-t {
-//   grid-column-start: 2;
-//   grid-column-end: three;
-//   grid-row-start: row1-start;
-//   grid-row-end: 2;
-// }
-
-// .item-card-sm-dx-t {
-//   grid-column-start: 2;
-//   grid-column-end: two;
-//   grid-row-start: row1-start;
-//   grid-row-end: 1;
-// }
-
-.item-assistant {
-  grid-column-start: 4;
-  grid-column-end: five;
-  grid-row-start: row2-start;
-  grid-row-end: 3;
-}
-
-.container {
-  width: 823px;
-  height: 874px;
   display: flex;
 }
 
-.flex-container {
-  flex-direction: row;
-  align-content: space-around;
+.parent-div-2 {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 30px;
+  grid-row-gap: 20px;
+  align-items: start;
+}
+
+.parent-div-3 {
+  align-self: flex-end;
 }
 
