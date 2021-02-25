@@ -1,0 +1,105 @@
+.banner {
+  background-size: cover;
+  background-color: #A9DCDB;
+  height: 608px;
+  width: 1920px;
+  display: flex;
+  border-bottom: 12px solid #FE0760;
+}
+
+.banner img {
+  margin-top: 220px;
+  width: 254.07px;
+  height: 388.3px;
+  transform: scaleX(-1);
+}
+
+.card-start-learning {
+  margin-top: 184px;
+  margin-left: 231px;
+  width: 819px;
+}
+
+.hello-girl {
+  display: flex;
+  align-items: center;
+}
+
+.hello-girl p {
+  font-size: 30px;
+  font-family: $headers-font;
+  text-align: center;
+  padding-left: 50px;
+}
+
+.card-start-learning .btn {
+  background: #6C63FF;
+  border-radius: 50px;
+  width: 270px;
+  height: 69px;
+  margin-top: 43px;
+}
+
+.card-start-learning .btn {
+  text-align: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 22px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
+.card-start-learning .btn:hover {
+  opacity: 0.85;
+  text-decoration: none;
+  color: white;
+}
+
+.btn-account {
+  color: #6C63FF;
+  font-family: Roboto;
+  padding-left: 45px;
+  padding-top: 20px;
+}
+
+.btn-account:hover {
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.container-home {
+  margin-top: 69px;
+  display: inline-block;
+  padding-left: 107px;
+  padding-right: 107px;
+}
+
+.card-about {
+  width: 300px;
+  text-align: center;
+  margin: 50px;
+}
+
+i {
+  font-size: 60px;
+  margin-bottom: 33px;
+}
+
+.blue {
+  color: #003366;
+}
+
+.yellow {
+  color: #FFD200;
+}
+
+.brown {
+  color: #997029;
+}
+
+.purple {
+  color: #6C63FF;
+}
