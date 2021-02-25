@@ -4,13 +4,15 @@
   display: flex;
   align-items: center;
   border-bottom: 2px solid #D1D3D4;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .step-card-logo {
   padding: 0 34px;
   .logo {
     color: $alert;
-    // color: #CCCCCC; this one for collapsed
     font-size: 70px;
   }
 }
@@ -24,15 +26,15 @@
 
 .step-card-expand-icon {
   color: $alert;
-  // color: #CCCCCC; this one for collapsed
   font-size: 52px;
   margin-right: 34px;
   margin-left: auto;
-  // transform: rotate(270deg);
+  transform: rotate(-90deg);
+  transition: 0.2s ease;
 }
 
 .step-card-expanded-part {
-  display: flex;
+  display: none;
   background-color: $cb-white;
   padding-left: 140px;
   padding-right: 36px;
@@ -42,4 +44,13 @@
 
 .btn-accordion {
   margin-left: 300px;
+}
+
+// taking effect when the card gets expanded
+.step-card-expanded-part-expanded {
+  display: flex;
+}
+
+.step-card-expand-icon-expanded {
+  transform: none;
 }

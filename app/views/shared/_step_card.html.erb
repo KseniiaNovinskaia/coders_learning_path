@@ -12,7 +12,7 @@ e.g. "expanded" on this card. Then the logic what gets displayed in this card is
     </div>
 
     <div class="step-card-text">
-      <h5><%= @path.name %></h5>
+      <h5><%= locals[:step].title %></h5>
       <!-- ToDo: display either "completed" or "to do" -->
       <p class="completion"><i class="fas fa-circle"></i> TO DO</p>
       <!-- <p class="completion"><i class="fas fa-check-circle"></i> Completed</p> -->
@@ -40,6 +40,3 @@ e.g. "expanded" on this card. Then the logic what gets displayed in this card is
   </div>
 
 </div>
-
-
-
