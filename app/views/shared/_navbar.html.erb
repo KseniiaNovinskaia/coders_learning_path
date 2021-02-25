@@ -27,7 +27,8 @@
         </li> -->
         <li class="nav-item dropdown">
           <%# INSERT PROPER USER ICON INSTEAD OF SSAUNIER PROFILE PIC%>
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-nav dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%# image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-nav dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= cl_image_tag("Home/profile-avatar_gdki3u.png", :className=>"avatar-nav dropdown-toggle", width: 65, height: 65, crop: :scale)%>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%# INSERT LINK TO USER PROFILE HERE%>
             <%= link_to "Profile", "#", class: "dropdown-item" %>
