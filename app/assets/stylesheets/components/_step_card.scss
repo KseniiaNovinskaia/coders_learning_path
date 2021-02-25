@@ -32,7 +32,8 @@
 }
 
 .step-card-expanded-part {
-  display: flex;
+  // display: flex;
+  display: none;
   background-color: $cb-white;
   padding-left: 140px;
   padding-right: 36px;
@@ -40,6 +41,14 @@
   border: 1px solid $text-color;
 }
 
+.step-card-expanded-part-expanded {
+  display: flex;
+}
+
 .btn-accordion {
   margin-left: 300px;
+}
+
+.step-card-expand-icon-expanded {
+
 }
