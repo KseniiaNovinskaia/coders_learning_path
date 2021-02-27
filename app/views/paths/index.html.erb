@@ -1,9 +1,14 @@
-<h1>Hello paths</h1>
+<div class="parent">
+  <div>
+    <h1 class="path-name-container">CHOOSE YOUR PATH</h1>
+  </div>
+  <div>
+    <div class="parent-div-2">
+        <%= render partial: "/shared/index_card_sm"%>
+    </div>
+  </div>
+  <div class="parent-div-3">
+    <%= image_tag "assistant.svg", alt: "alttext", class: "girl-assistant-img" %>
+  </div>
+</div>
 
-<% @paths.each do |path| %>
-  <h6><%= path.name %></h6>
-  <p><%= path.description %></p>
-  <p style="font-size: 14px;"><%= path.requirement %></p>
-  <p style="font-size: 10px;"><%= path.language %></p>
-
-<% end %>

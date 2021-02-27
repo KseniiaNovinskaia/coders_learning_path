@@ -1,0 +1,36 @@
+.footer-container {
+  // margin-top: 100px;
+}
+
+.footer {
+  // position: absolute;
+  width: 100%;
+  height: 89px;
+  bottom: 0;
+  background-color: #A9DCDB;
+  font-size: 16px;
+  font-family: $headers-font;
+  color: $text-color;
+  padding-left: 106px;
+  padding-right: 106px;
+}
+
+.footer-ul {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.footer-li {
+  font-family: $headers-font;
+  color: $text-color;
+  list-style-type: none;
+}
+
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  // position: relative;
+}

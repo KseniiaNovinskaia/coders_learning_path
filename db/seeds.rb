@@ -27,6 +27,7 @@ p "Created the USER '#{u.name}', email: '#{u.email}', password: '123456'"
         requirement: 'beginner',
         language: 'ruby javascript html css rails'
         )
+
   p "Created the PATH #{p.name}!"
 
   Path.create!(

@@ -1,0 +1,55 @@
+
+    <% @paths.each do |path| %>
+    <%= link_to path_path(path), class: 'd-block' do %>
+
+      <div class="p_card_sm" style="background-color: #003366">
+          <div class="p_card_sm  d-flex flex-column text-left">
+            <div style="margin-left: 20px; margin-top: 15px;">
+              <p>I want to become a</p>
+            </div>
+            <div style="margin-left: 20px; margin-top: 0px;">
+              <h6><%= path.name %></h6>
+            </div>
+            <div class="flex-grow-1 text-center pt-2">
+              <% if path.name == "Full Stack Developer" %>
+                  <%= cl_image_tag("Index/FULL_STACK_DEVELOPER_pmau6g.svg") %>
+                <% elsif path.name == "ML Developer" %>
+                 <%= cl_image_tag("Index/ML_developer_gidze2.svg")%>
+                <% elsif path.name == "Data Analyst" %>
+                  <%= cl_image_tag("Index/DATA_ANALYST_ieyk54.svg")%>
+                <% else %>
+                  <%= cl_image_tag("Index/ANDROID_DEVELOPER_g9nc7l.svg")%>
+              <% end %>
+            </div>
+            <div class="d-flex justify-content-between">
+              <div>
+                <% if path.requirement == "beginner" %>
+                  <div class="d-flex align-items-center" style="margin-left: 20px; margin-top: 15px;">
+                    <i class="fas fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle mr-3"></i>
+                    <p style="font-size: 14px; margin-bottom: 0"><%= "Beginner" %></p>
+                  </div>
+                <% elsif path.requirement == "intermediate"%>
+                    <div class="d-flex align-items-center" style="margin-left: 20px; margin-top: 15px; ">
+                      <i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle mr-3"></i>
+                      <p style="font-size: 14px; margin-bottom: 0"><%= path.requirement %></p>
+                    </div>
+                  <% else %>
+                      <div class="d-flex align-items-center" style="align-self: flex-end; width: 100%; margin-left: 20px; margin-top: 15px;">
+                        <i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle mr-3"></i>
+                        <p style="font-size: 14px; margin-bottom: 0"><%= path.requirement %></p>
+                      </div>
+                <% end %>
+              </div>
+              <div>
+                <p class="btn-card-sm text-center"> lessons </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <% end %>
+    <% end %>
+
+
+
+

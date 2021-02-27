@@ -1,0 +1,30 @@
+.p_card_sm {
+  background-color: $cb-white;
+  width: 394px;
+  height: 419px;
+  border: 2px solid $text-color;
+  border-radius: 0px 0px 10px;
+  i {
+    color: $text-color;
+  }
+  overflow: hidden;
+  a:hover{
+    text-decoration: none;
+  }
+}
+
+.p_card_sm_img {
+width: 120px;
+height: 185.3px;
+}
+
+.p_card_sm:hover{
+     transform: translate(4px);
+     transform: translate(1%, 1%);
+     background-color: #A9DCDB;
+     //color: white;
+     //transform-origin:50% 50%;
+     transition-duration: 0.5s;
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+  //text-decoration: none;
+}
