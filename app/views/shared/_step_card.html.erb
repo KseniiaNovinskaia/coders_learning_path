@@ -18,6 +18,11 @@
       <% end %>
     </div>
 
+    <div class="step-card-external-source-icon-container">
+      <% source = locals[:step].external_source_icon %>
+      <%= image_tag source[:path_to_source_icon], alt: source[:source_icon_alt], class: 'step-card-external-source-icon' %>
+    </div>
+
     <div class="step-card-expand-icon <%= 'step-card-expand-icon-completed' if locals[:completed] %>">
       <i class="fas fa-angle-down"></i>
     </div>
