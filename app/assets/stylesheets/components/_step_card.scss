@@ -11,6 +11,27 @@
   }
 }
 
+.step-card-title-container {
+  display: flex;
+  margin-bottom: 15px;
+
+  h5 {
+    margin-bottom: 0;
+  }
+}
+
+.step-card-external-source-icon-container {
+  height: 24px;
+  width: 24px;
+  margin-left: 20px;
+
+  .step-card-external-source-icon {
+    max-width: 100%;
+    max-height: 100%;
+    transform: translateY(2px);
+  }
+}
+
 .step-card-completed-icon {
   color: $reward;
 }
