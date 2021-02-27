@@ -28,7 +28,14 @@
 // that shows the actual progress
 .progress-bar {
   background-color: $reward;
-  color: $text-color;
+  border-radius: 30px;
+
+  p {
+    display: inline;
+    font-weight: bold;
+    margin: 0 20px 0 0;
+    text-align: right;
+  }
 }
 
 
