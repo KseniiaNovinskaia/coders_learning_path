@@ -1,40 +1,49 @@
 <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 
-<!-- I think we need ONE card and an event listener for the expand-button which toggles the class
-e.g. "expanded" on this card. Then the logic what gets displayed in this card is done here in this ONE component -->
-
 <div class="step-card-container">
 
   <div class="step-card-closed-part">
 
-    <div class="step-card-logo">
-      <span class="iconify logo" data-inline="false" data-icon="ph:path-bold"></span>
+    <div class="step-card-logo-container">
+      <span class="iconify logo <%= 'logo-completed' if locals[:completed] %>"
+      data-inline="false" data-icon="ph:path-bold"></span>
     </div>
 
     <div class="step-card-text">
       <h5><%= locals[:step].title %></h5>
-      <!-- ToDo: display either "completed" or "to do" -->
-      <p class="completion"><i class="fas fa-circle"></i> TO DO</p>
-      <!-- <p class="completion"><i class="fas fa-check-circle"></i> Completed</p> -->
+      <% if locals[:completed] %>
+        <p class="completion"><i class="fas fa-check-circle step-card-completed-icon"></i> Completed</p>
+      <% else %>
+        <p class="completion"><i class="fas fa-circle step-card-todo-icon"></i> TO DO</p>
+      <% end %>
     </div>
 
-    <!-- ToDo: display either arrow right or arrow down -->
-    <div class="step-card-expand-icon">
+    <div class="step-card-expand-icon <%= 'step-card-expand-icon-completed' if locals[:completed] %>">
       <i class="fas fa-angle-down"></i>
     </div>
 
   </div>
 
-
   <div class="step-card-expanded-part">
 
     <div class="step-card-description">
-      <i class="far fa-calendar-check"></i>
+      <div class="step-duration">
+        <div>
+          <i class="far fa-calendar-check step-duration-symbol"></i>
+        </div>
+        <div>
+          <p class="step-duration-number"><%= locals[:duration] %></p>
+        </div>
+      </div>
       <p><%= locals[:step].description %></p>
     </div>
 
     <div class="btn-accordion-container">
-      <%= render 'shared/btn_accordion' %>
+      <%= render 'shared/btn_accordion',
+      locals: {
+        completed: locals[:completed],
+        url: locals[:step].url
+      } %>
     </div>
 
   </div>

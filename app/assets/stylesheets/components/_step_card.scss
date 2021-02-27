@@ -3,13 +3,23 @@
   height: 124px;
   display: flex;
   align-items: center;
-  border-bottom: 2px solid #D1D3D4;
+  border-bottom: 2px solid #CCC;
+  transition: 0.15s ease;
   &:hover {
     cursor: pointer;
+    transform: scale(1.01);
   }
 }
 
-.step-card-logo {
+.step-card-completed-icon {
+  color: $reward;
+}
+
+.step-card-todo-icon {
+  color: $warn;
+}
+
+.step-card-logo-container {
   padding: 0 34px;
   .logo {
     color: $alert;
@@ -18,7 +28,6 @@
 }
 
 .step-card-text {
-
   .completion {
     margin-bottom: 0;
   }
@@ -29,7 +38,6 @@
   font-size: 52px;
   margin-right: 34px;
   margin-left: auto;
-  transform: rotate(-90deg);
   transition: 0.2s ease;
 }
 
@@ -39,7 +47,22 @@
   padding-left: 140px;
   padding-right: 36px;
   padding-top: 36px;
-  border: 1px solid $text-color;
+  border: 2px solid $text-color;
+}
+
+.step-duration {
+  display: flex;
+  align-items: center;
+}
+
+.step-duration-symbol {
+  font-size: 28px;
+  margin-right: 12px;
+}
+
+.step-duration-number {
+  display: inline;
+  font-weight: bold;
 }
 
 .btn-accordion {
@@ -47,10 +70,31 @@
 }
 
 // taking effect when the card gets expanded
+.step-card-closed-part-expanded {
+  border-bottom: 2px solid transparent;
+
+}
+
 .step-card-expanded-part-expanded {
   display: flex;
 }
 
 .step-card-expand-icon-expanded {
-  transform: none;
+  transform: rotate(180deg);
 }
+
+// color changes when the step is completed
+.step-card-expand-icon-completed {
+  color: #CCC;
+}
+
+.step-card-logo-completed {
+  color: #CCC;
+}
+
+.step-card-logo-container {
+  .logo-completed {
+    color: #CCC;
+  }
+}
+
