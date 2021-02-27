@@ -4,6 +4,7 @@
 
 .footer {
   // position: absolute;
+  padding-top: 30px;
   width: 100%;
   height: 89px;
   bottom: 0;
@@ -16,7 +17,7 @@
 }
 
 .footer-ul {
-  margin-top: 30px;
+  padding-bottom: 50px;
   display: flex;
   justify-content: space-between;
   padding: 0;

@@ -10,13 +10,25 @@
     </div>
 
     <div class="step-card-text">
-      <h5><%= locals[:step].title %></h5>
+      <div class="step-card-title-container">
+        <h5><%= locals[:step].title %></h5>
+        <div class="step-card-external-source-icon-container">
+          <% source = locals[:step].external_source_icon %>
+          <%= image_tag source[:path_to_source_icon], alt: source[:source_icon_alt], class: 'step-card-external-source-icon' %>
+        </div>
+      </div>
+
       <% if locals[:completed] %>
         <p class="completion"><i class="fas fa-check-circle step-card-completed-icon"></i> Completed</p>
       <% else %>
         <p class="completion"><i class="fas fa-circle step-card-todo-icon"></i> TO DO</p>
       <% end %>
     </div>
+
+<!--     <div class="step-card-external-source-icon-container">
+      <%# source = locals[:step].external_source_icon %>
+      <%#= image_tag source[:path_to_source_icon], alt: source[:source_icon_alt], class: 'step-card-external-source-icon' %>
+    </div> -->
 
     <div class="step-card-expand-icon <%= 'step-card-expand-icon-completed' if locals[:completed] %>">
       <i class="fas fa-angle-down"></i>

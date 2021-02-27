@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row mt-70">
+    <div class="col-1"></div>
+    <div class="col-3">
+      <%= image_tag "http://res.cloudinary.com/dqopwdgta/image/upload/c_scale,h_65,w_65/v1/Home/profile-avatar_gdki3u.png", class: "avatar-profile" %>
+      <h1 class="mt-30"><%= @user.name %></h1>
+      <p class="mt-30"><%= @user.created_at.strftime("Joined on %d/%m/%Y")%> </p>
+    </div>
+    <div class="col-7">
+      <h2 style="color: #003366;">YOUR PATHS</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias animi quos reiciendis rerum atque dignissimos nemo pariatur earum voluptas eum, beatae at tempore tempora nostrum tenetur fugit velit exercitationem error?</p>
+      <h2 style="color: #003366;">STATISTICS</h2>
+      <h4>CODEWARS</h4>
+      <h4>GITHUB</h4>
+      <p>Github Username: <%= @user.user_github_data['login'] %></p>
+    </div>
+  </div>
+  <div class="col-1"></div>
+</div>
