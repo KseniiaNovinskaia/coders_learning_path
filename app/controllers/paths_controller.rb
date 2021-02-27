@@ -13,20 +13,9 @@ class PathsController < ApplicationController
     @step_data = {}
     @steps.each do |step|
       id = step.id
-      completion = step_progresses.where(step_id: id).first.completion
-      duration = step.duration
-      if duration < 60
-        duration_string = "#{duration} minutes"
-      elsif (duration % 60).zero?
-        duration_hours = duration / 60
-        duration_string = pluralize(duration_hours, 'hour').to_s
-      else
-        duration_string = "#{duration.fdiv(60).round(1)} hours"
-      end
-
       @step_data[id] = {
-        completion: completion,
-        duration: duration_string
+        completion: step_progresses.where(step_id: id).first.completion,
+        duration: step.duration_string
       }
     end
   end
