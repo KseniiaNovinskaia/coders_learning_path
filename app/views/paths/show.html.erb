@@ -4,21 +4,11 @@
     <h1><%= @path.name %></h1>
   </div>
 
-  <div class="path-show-page-middle-container">
-     <%= render 'shared/progress_bar' %>
-     <div class="steps-container">
-        <% @steps.each do |step| %>
-          <%= render 'shared/step_card',
-          locals: {
-            step: step,
-            completed: @step_data[step.id][:completion],
-            duration: @step_data[step.id][:duration] } %>
-        <% end %>
-     </div>
-  </div>
+  <form method="post" action="/paths/:path_id/step_progresses" class="button_to">
+      <input value="New" type="submit" />
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    </form>"
 
-<!--   <div class="container-right">
-  </div> -->
 
 </div>
 

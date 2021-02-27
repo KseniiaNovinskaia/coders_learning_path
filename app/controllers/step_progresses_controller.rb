@@ -6,6 +6,7 @@ class StepProgressesController < ApplicationController
       @step_progress.path = @path
       @step_progress.user = current_user
       @step_progress.step = step
+      authorize @step_progress
       @step_progress.save
     end
   end
