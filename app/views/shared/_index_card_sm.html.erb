@@ -1,6 +1,6 @@
 
     <% @paths.each do |path| %>
-    <%= link_to path_path(path), class: 'd-block' do %>
+
       <% if path.name == "Full Stack Developer" %>
         <% id = "full_stack_developer" %>
       <% elsif path.name == "ML Developer" %>
@@ -57,7 +57,6 @@
           </div>
         </div>
 
-      <% end %>
     <% end %>
 
 

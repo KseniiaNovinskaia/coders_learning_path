@@ -1,3 +1,5 @@
+const initBigCardEventListener = () => {
+
 const littleCards = document.querySelectorAll(".p_card_sm");
 const bigCards = document.querySelectorAll(".path-card-expanded");
 littleCards.forEach(littleCard => {
@@ -15,3 +17,6 @@ littleCards.forEach(littleCard => {
     bigCard.classList.remove("d-none");
   })
 })
+};
+
+export { initBigCardEventListener };
