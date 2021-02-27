@@ -1,0 +1,6 @@
+<p>GitHub Username: <%= @user.user_github_data['name'] %></p>
+<p>Public repos:<%= @user.user_github_data['public_repos'] %></p>
+
+<p>Codewars Username: <%= @user.user_codewars_data['username'] %></p>
+<p>Codewars honor: <%= @user.user_codewars_data['honor'] %></p>
+<p>Codewars overall rank: <%= @user.user_codewars_data['ranks']['overall']['name'] %></p>
