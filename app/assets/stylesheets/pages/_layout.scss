@@ -10,3 +10,11 @@
 .path-show-page-middle-container {
   width: 1120px;
 }
+
+.container-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 380px;
+  padding-top: 38px;
+}
