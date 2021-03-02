@@ -22,13 +22,21 @@
   background-color: #E6E6E6;
   // width: 90%;
   flex-grow: 2;
+  max-width: 1120px;
 }
 
 // this is a bootstrap class for the part of the progress-bar
 // that shows the actual progress
 .progress-bar {
   background-color: $reward;
-  color: $text-color;
+  border-radius: 30px;
+
+  p {
+    display: inline;
+    font-weight: bold;
+    margin: 0 20px 0 0;
+    text-align: right;
+  }
 }
 
 
