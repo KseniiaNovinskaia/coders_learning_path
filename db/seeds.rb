@@ -5,142 +5,131 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
 p "Clearing the db first..."
-
 User.destroy_all
 Path.destroy_all
-
 p "db clear! Ready for seeding!"
-
 u = User.create!(
       name: 'Sarah',
       email: 'sarah@gmail.com',
       password: '123456',
       )
-
 p "Created the USER '#{u.name}', email: '#{u.email}', password: '123456'"
-
   p = Path.create!(
         name: 'Full Stack Developer',
         description: 'As a jack of all trades (and master of quite a few), a full-stack engineer can get a project done from start to finish. In this Path, you’ll begin with the front-end, move on to the back-end, then learn to connect the two. By the time you’re done, you’ll have the well-rounded skills needed to enter this in-demand job market.',
         requirement: 'beginner',
         language: 'ruby javascript html css rails'
         )
-
   p "Created the PATH #{p.name}!"
-
   Path.create!(
     name: 'Machine Learning',
     description: 'Machine Learning is an increasingly hot field of data science dedicated to enabling computers to learn from data. From spam filtering in social networks to computer vision for self-driving cars, the potential applications of Machine Learning are vast.',
     requirement: 'intermediate',
     language: 'python'
    )
-
   Path.create!(
     name: 'Data Analyst',
     description: 'Companies are looking for data analysts to drive informative decision making, and this Path will teach you the skills you need to become just that. You’ll learn how to use Python and SQL to acquire, clean, and analyze data, plus communicate your findings. Along the way, you’ll build portfolio-worthy projects that will help you get job-ready.',
     requirement: 'advanced',
     language: 'python'
    )
-
   Path.create!(
     name: 'iOS Developer',
     description: 'Swift is a powerful programming language that is easy and also fun to learn. Its code is safe by design, yet also produces software that runs lightning-fast. It is used to build apps for iOS, watchOS, macOS, tvOS, and Linux. This Path will start with the fundamental programming concepts before digging deeper into the more advanced Swift topics.',
     requirement: 'advanced',
     language: 'swift'
    )
-
   p "Created three more PATHs!"
-
 # step_type could be: article, video or module where 'module' would be specified by its source, e.g. codecademy, freecodecamp or udemy
 steps_data = [
   {
     url: 'https://www.codecademy.com/learn/learn-html',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla. Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget. Cras ac eu ut urna purus, varius nisl tincidunt velit. ',
+    description: 'Learn the basics of HTML5 and start building & editing web pages.',
     title: 'Learn HTML',
     step_type: 'codecademy',
     duration: 540
   },
   {
     url: 'https://www.freecodecamp.org/learn/responsive-web-design/#basic-css',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla. Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget. Cras ac eu ut urna purus, varius nisl tincidunt velit. ',
+    description: 'CSS, or Cascading Style Sheets, tell the browser how to display the text and other content that you write in HTML. With CSS, you can control the color, font, size, spacing, and many other aspects of HTML elements.',
     title: 'Basic CSS',
     step_type: 'freecodecamp',
     duration: 480
   },
   {
     url: 'https://www.youtube.com/watch?v=x3c1ih2NJEg',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla. Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget. Cras ac eu ut urna purus, varius nisl tincidunt velit. ',
+    description: 'How does the Internet work? The video you are watching now traveled thousands of miles from a Google data center to reach you. Let’s learn how the Internet works by getting to understand the details of this data’s incredible journey.',
     title: 'How the Internet works',
     step_type: 'video',
     duration: 10
   },
   {
     url: 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla. Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget. Cras ac eu ut urna purus, varius nisl tincidunt velit. ',
+    description: 'A comprehensive guide to CSS flexbox layout. This complete guide explains everything about flexbox, focusing on all the different possible properties for the parent element (the flex container) and the child elements (the flex items). It also includes history, demos, patterns, and a browser support chart.',
     title: 'A complete Guide to Flexbox',
     step_type: 'article',
     duration: 25
   },
   {
     url: 'https://www.udemy.com/course/ruby-for-absolute-beginners/?aff_code=Ewh3Y1xWRnkGRR5zMkBPbG1RGXFfVFh8CF4ac05QRHYBShFxWT5XMRM%3D&pmtag=CAREERS24LEARN15&utm_source=adwords&utm_medium=udemyads&utm_campaign=DSA_Catchall_la.EN_cc.ROW&utm_content=deal4584&utm_term=_._ag_88010211481_._ad_437497337007_._kw__._de_c_._dm__._pl__._ti_dsa-406594358574_._li_9061132_._pd__._&matchtype=b&gclid=Cj0KCQiA-OeBBhDiARIsADyBcE71hhRe4TSt9fPwxuRZlQ5vHSnNuykh0ayuF2Lol5r0ULycrzLi4hMaAoaGEALw_wcB',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla. Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget. Cras ac eu ut urna purus, varius nisl tincidunt velit. ',
+    description: 'As the Course title says it all,  this course "Ruby For Absolute Beginners" is created absolutely for any one wanting to get their hands dirty and learn programming language.
+Since Ruby has very little to no syntax, It is the most easiest language to learn any programming language.
+If you are new to programming or have no prior knowledge about programming, then look nowhere.
+This course is totally dedicated and planned for new comers who wants to learn programming and there is no any other simpler language than "Ruby" to learn programming.',
     title: 'Ruby for Absolute Beginners',
     step_type: 'udemy',
     duration: 420
   },
   {
-    url: 'https://www.codecademy.com/courses/react-101/lessons/react-components-advanced-jsx/exercises/render-multiline-jsx',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla. Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget. Cras ac eu ut urna purus, varius nisl tincidunt velit. ',
-    title: 'Learn Flexbox',
-    step_type: 'codecademy',
-    duration: 45
+    url: 'https://www.rubyguides.com/ruby-tutorial/object-oriented-programming/',
+    description: 'You don’t need OOP (Object Oriented Programming) to write code.
+You could write any Ruby program without OOP.
+But using OOP makes things easier if you’re writing a non-trivial program.
+Why?
+Because OOP is all about how you design & organize your code.
+You create classes that represent concepts in your program.
+And each class is responsible for doing something.',
+    title: 'OOP Basics with Ruby',
+    step_type: 'article',
+    duration: 40
   },
   {
-    url: 'https://www.codecademy.com/courses/react-101/lessons/react-components-advanced-jsx/exercises/render-multiline-jsx',
+    url: 'https://www.udemy.com/course/advanced-and-object-oriented-javascript/?ranMID=39197&ranEAID=JVFxdTr9V80&ranSiteID=JVFxdTr9V80-uJrNvDXXn2NLFU385E_YjQ&LSNPUBID=JVFxdTr9V80&utm_source=aff-campaign&utm_medium=udemyads',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla. Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget. Cras ac eu ut urna purus, varius nisl tincidunt velit. ',
-    title: 'Learn Flexbox',
-    step_type: 'codecademy',
-    duration: 45
+    title: 'Advanced an Object Oriented Javascript and ES6',
+    step_type: 'udemy',
+    duration: 330
   },
   {
-    url: 'https://www.codecademy.com/courses/react-101/lessons/react-components-advanced-jsx/exercises/render-multiline-jsx',
+    url: 'https://www.youtube.com/watch?v=HXV3zeQKqGY',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla. Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget. Cras ac eu ut urna purus, varius nisl tincidunt velit. ',
-    title: 'Learn Flexbox',
-    step_type: 'codecademy',
-    duration: 45
+    title: 'SQL - Database Course for Beginners',
+    step_type: 'video',
+    duration: 260
   },
   {
-    url: 'https://www.codecademy.com/courses/react-101/lessons/react-components-advanced-jsx/exercises/render-multiline-jsx',
+    url: 'https://www.codecademy.com/articles/design',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla. Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget. Cras ac eu ut urna purus, varius nisl tincidunt velit. ',
-    title: 'Learn Flexbox',
-    step_type: 'codecademy',
-    duration: 45
+    title: 'Consider Design While You Build',
+    step_type: 'article',
+    duration: 10
   },
   {
-    url: 'https://www.codecademy.com/courses/react-101/lessons/react-components-advanced-jsx/exercises/render-multiline-jsx',
+    url: 'https://www.youtube.com/watch?v=Cx2dkpBxst8&list=PLXDU_eVOJTx7QHLShNqIXL1Cgbxj7HlN4',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla. Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget. Cras ac eu ut urna purus, varius nisl tincidunt velit. ',
-    title: 'Learn Flexbox',
-    step_type: 'codecademy',
-    duration: 45
+    title: 'Figma for Beginners',
+    step_type: 'video',
+    duration: 90
   },
   {
-    url: 'https://www.codecademy.com/courses/react-101/lessons/react-components-advanced-jsx/exercises/render-multiline-jsx',
+    url: 'https://www.udemy.com/course/ruby-on-rails-a-beginners-guide-free/',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla. Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget. Cras ac eu ut urna purus, varius nisl tincidunt velit. ',
-    title: 'Learn Flexbox',
-    step_type: 'codecademy',
-    duration: 45
-  },
-  {
-    url: 'https://www.codecademy.com/courses/react-101/lessons/react-components-advanced-jsx/exercises/render-multiline-jsx',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla. Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget. Cras ac eu ut urna purus, varius nisl tincidunt velit. ',
-    title: 'Learn Flexbox',
-    step_type: 'codecademy',
-    duration: 45
-  },
+    title: 'Ruby on Rails a Beginners Guide',
+    step_type: 'udemy',
+    duration: 390
+  }
 ]
-
 steps_data.each do |step_data|
   Step.create!(
     path_id: p.id,
@@ -151,9 +140,7 @@ steps_data.each do |step_data|
     duration: step_data[:duration]
   )
 end
-
-p "Added 12 STEPs to the path #{p.name}"
-
+p "Added 11 STEPs to the path #{p.name}"
 # 12.times do
 #   Step.create!(
 #     path_id: p.id,
@@ -164,16 +151,12 @@ p "Added 12 STEPs to the path #{p.name}"
     # duration: 45
     # )
 # end
-
 # p "Added 12 identical STEPs to the path!"
-
 lg = LearningGroup.create!(
       path_id: p.id,
       slack_channel: '#full-stack-development-01'
       )
-
 p "Initialized a LEARNING_GROUP, associated to the path with the slack channel '#{lg.slack_channel}'"
-
 Step.all.each_with_index do |step, i|
   StepProgress.create!(
     user_id: User.find_by(name: u.name).id,
@@ -182,21 +165,16 @@ Step.all.each_with_index do |step, i|
     path_id: p.id
     )
 end
-
 p "Defined the STEP_PROGRESS for each step for one user (the first user in the db)"
-
 UsersLearningGroup.create!(
   user_id: User.find_by(name: u.name).id,
   learning_group_id: lg.id
   )
-
 p "Created a USERS_LEARNING_GROUP consisting of the first user and the learning group"
-
 CodewarsProfile.create!(
   user_name: 'jasonheeps',
   user_id: User.find_by(name: u.name).id
   )
-
 p "Added a CODEWARS_PROFILE"
 p "-------------------------"
 p "--- seeding complete! ---"
