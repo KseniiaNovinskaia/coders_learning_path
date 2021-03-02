@@ -3,4 +3,9 @@ class ProfilesController < ApplicationController
     @user = User.find_by(name: params[:user_name])
     authorize @user
   end
+
+  def new
+    @codewars_profile = CodewarsProfile.new
+  end
+
 end

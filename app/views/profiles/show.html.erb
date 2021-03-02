@@ -13,6 +13,11 @@
       <h4>CODEWARS</h4>
       <h4>GITHUB</h4>
       <p>Github Username: <%= @user.user_github_data['login'] %></p>
+      <%= simple_form_for(@codewars_profile) do |f| %>
+        <%= f.input :codewars_username %>
+        <%# raise %>
+        <%= f.submit %>
+      <% end %>
     </div>
   </div>
   <div class="col-1"></div>
