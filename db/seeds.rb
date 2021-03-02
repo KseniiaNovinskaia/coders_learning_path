@@ -95,36 +95,51 @@ And each class is responsible for doing something.',
     duration: 40
   },
   {
+    url: 'https://www.codecademy.com/learn/introduction-to-javascript',
+    description: 'Learn the JavaScript fundamentals you’ll need for front-end or back-end development. Complete Exercise 1 (Introduction) up to 7 (Iterators).',
+    title: 'Javascript Basics',
+    step_type: 'codecademy',
+    duration: 300
+  },
+  {
     url: 'https://www.udemy.com/course/advanced-and-object-oriented-javascript/?ranMID=39197&ranEAID=JVFxdTr9V80&ranSiteID=JVFxdTr9V80-uJrNvDXXn2NLFU385E_YjQ&LSNPUBID=JVFxdTr9V80&utm_source=aff-campaign&utm_medium=udemyads',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla. Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget. Cras ac eu ut urna purus, varius nisl tincidunt velit. ',
+    description: 'This course will fill in any gaps in your JavaScript knowledge and will help you learn and use any other JS frameworks like ReactJS,NodeJS,AngularJs easily.
+
+JavaScript does not use structures like classes  to implement object oriented programming.This can be confusing for programmers coming from Java ,C++ or python background.This course covers every detail of JavaScript types, functions, objects and how JavaScript engine deals with them which will clear up any confusion and help you implement your JavaScript applications in a better way.',
     title: 'Advanced an Object Oriented Javascript and ES6',
     step_type: 'udemy',
     duration: 330
   },
   {
     url: 'https://www.youtube.com/watch?v=HXV3zeQKqGY',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla. Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget. Cras ac eu ut urna purus, varius nisl tincidunt velit. ',
+    description: 'In this course, we\'ll be looking at database management basics and SQL using the MySQL RDBMS. The course is designed for beginners to SQL and database management systems, and will introduce common database management topics.',
     title: 'SQL - Database Course for Beginners',
     step_type: 'video',
     duration: 260
   },
   {
     url: 'https://www.codecademy.com/articles/design',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla. Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget. Cras ac eu ut urna purus, varius nisl tincidunt velit. ',
+    description: '5 Steps to leverage design practices and tools while you build websites.',
     title: 'Consider Design While You Build',
     step_type: 'article',
     duration: 10
   },
   {
     url: 'https://www.youtube.com/watch?v=Cx2dkpBxst8&list=PLXDU_eVOJTx7QHLShNqIXL1Cgbxj7HlN4',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla. Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget. Cras ac eu ut urna purus, varius nisl tincidunt velit. ',
+    description: 'Figma is where teams design together. Bring ideas to life in a design, wireframe, or prototype. Partner with teammates from content creation to design implementation. Get better feedback from your stakeholders. Figma gets everyone on the same page—literally.',
     title: 'Figma for Beginners',
     step_type: 'video',
     duration: 90
   },
   {
     url: 'https://www.udemy.com/course/ruby-on-rails-a-beginners-guide-free/',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla. Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget. Cras ac eu ut urna purus, varius nisl tincidunt velit. ',
+    description: 'Once you have completed this course you will have this skill to build out your very own application using a "step by step" approach or by using Rails generators.
+
+Our first Model is our "User", we cover how this "Model" can be anything you desire.
+
+We then look at styling your site using Gems and Bootstrap. I also show you resources on where to find cool Bootstrap layouts that you can simply drop into your application.
+
+We then cover how to build association between a "User Model" and a "Article Model". This is an important step in any applications as it gives the ability to associate objects in your database.',
     title: 'Ruby on Rails a Beginners Guide',
     step_type: 'udemy',
     duration: 390
