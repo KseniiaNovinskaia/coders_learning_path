@@ -1,4 +1,4 @@
-<div class="parent">
+<div class="parent position-relative">
   <div>
     <h1 class="path-name-container">CHOOSE YOUR PATH</h1>
   </div>
@@ -7,8 +7,12 @@
         <%= render partial: "/shared/index_card_sm"%>
     </div>
   </div>
-  <div class="parent-div-3">
-    <%= image_tag "assistant.svg", alt: "alttext", class: "girl-assistant-img" %>
+
+  <div class="parent-div-3 position-absolute" style="right: 0;">
+    <div> <%= image_tag "assistant.svg", alt: "alttext", class: "girl-assistant-img" %> </div> <!-- give same relative position to these divs -->
+     <div> <%= render partial: "/shared/path_card_expanded"%> </div> <!-- give same relative position to these divs -->
   </div>
 </div>
+
+
 
