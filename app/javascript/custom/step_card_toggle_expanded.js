@@ -1,12 +1,13 @@
 
 const initStepCardEventListener = () => {
   const stepCards = document.getElementsByClassName('step-card-container');
+  // only execute if there are step-cards on the page
+  if (stepCards) {
+    for (let i = 0; i < stepCards.length; i++) {
+      let stepCard = stepCards[i];
 
-  for (var i = 0; i < stepCards.length; i++) {
-    let stepCard = stepCards[i];
-    let closedPart = stepCard.getElementsByClassName('step-card-closed-part')[0];
-    console.log(closedPart);
-    closedPart.addEventListener('click', (event) => {
+      let closedPart = stepCard.getElementsByClassName('step-card-closed-part')[0];
+      closedPart.addEventListener('click', (event) => {
 
       let expandedPart = stepCard.getElementsByClassName('step-card-expanded-part')[0];
       expandedPart.classList.toggle('step-card-expanded-part-expanded');
@@ -16,7 +17,8 @@ const initStepCardEventListener = () => {
 
       let closedPart = stepCard.getElementsByClassName('step-card-closed-part')[0];
       closedPart.classList.toggle('step-card-closed-part-expanded');
-  });
+    });
+    }
   }
 };
 
