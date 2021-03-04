@@ -1,6 +1,6 @@
 <!-- iOS Developer big card  big card -->
 <div style="z-index: 100;">
-    <div class="path-card-expanded mt-4 pt-5 px-5" id="ios-developer">
+    <div class="path-card-expanded mt-4 pt-5 px-5" data-big-card-id="ios-developer">
       <div>
         <!-- Cup -->
         <span class="iconify" data-icon="si-glyph:champion-cup" data-inline="false" style="font-size: 150px; color: #6C63FF;"></span>
@@ -38,7 +38,8 @@
         </div>
       </div>
                 <!-- Start button -->
-      <div class="btn-card-big d-flex text-left"> START
+      <div class=" btn-card-big d-flex text-left">
+      <%= link_to "START", path_path(Path.find_by(name: 'iOS Developer'), @steps, @user)%>
       </div>
     </div>
 </div>

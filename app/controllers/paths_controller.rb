@@ -6,7 +6,8 @@ class PathsController < ApplicationController
   end
 
   def show
-    authorize @path = Path.find_by_id(params[:id])
+    @path = Path.find_by_id(params[:id])
+    authorize @path
     @steps = @path.steps
     step_progresses = @path.step_progresses.where(user_id: current_user.id)
 

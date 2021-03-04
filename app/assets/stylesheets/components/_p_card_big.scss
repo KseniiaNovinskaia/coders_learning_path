@@ -10,7 +10,11 @@
   }
   overflow: hidden;
   z-index: 100;
-  //display: none;
+  display: none;
+}
+
+.path-card-expanded a:hover {
+   transition: visibility 0s, opacity 0.5s linear;
 }
 
 

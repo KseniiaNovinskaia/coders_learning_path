@@ -1,7 +1,7 @@
 
 <!-- Data Analyst  big card -->
 <div style="z-index: 100;">
-    <div class="path-card-expanded mt-4 pt-5 px-5" id="data_analyst">
+    <div class="path-card-expanded mt-4 pt-5 px-5" data-big-card-id="data_analyst">
       <div>
         <!-- Cup -->
         <span class="iconify" data-icon="si-glyph:champion-cup" data-inline="false" style="font-size: 150px; color: #FE0760;"></span>
@@ -25,11 +25,7 @@
         <!-- Description -->
         <div>
           <p><strong>WHAT YOU FIND IN THIS PATH</strong></p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Urna rutrum tellus rutrum feugiat cursus ipsum eget nulla.
-          Auctor imperdiet odio vulputate porta arcu nisl purus lobortis eget.
-          Cras ac eu ut urna purus, varius nisl tincidunt velit. Dictumst sed sit massa mattis facilisi molestie sed quisque.
-          Enim aenean nec semper a, tempor eget pharetra tristique viverra. </p>
+
         </div>
         <!-- This paths features modules from: -->
         <div>
@@ -39,7 +35,8 @@
         </div>
       </div>
                 <!-- Start button -->
-      <div class="btn-card-big d-flex text-left"> START
+      <div class=" btn-card-big d-flex text-left">
+      <%= link_to "START", path_path(Path.find_by(name: 'Data Analyst'), @steps, @user)%>
       </div>
     </div>
 </div>

@@ -8,11 +8,9 @@
     </div>
   </div>
 
-<%= render partial: "/shared/path_card_expanded"%>
-
-
   <div class="parent-div-3 position-absolute" style="right: 0;">
-    <%= image_tag "assistant.svg", alt: "alttext", class: "girl-assistant-img" %>
+    <div> <%= image_tag "assistant.svg", alt: "alttext", class: "girl-assistant-img" %> </div> <!-- give same relative position to these divs -->
+     <div> <%= render partial: "/shared/path_card_expanded"%> </div> <!-- give same relative position to these divs -->
   </div>
 </div>
 

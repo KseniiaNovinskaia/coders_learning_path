@@ -32,7 +32,7 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initStepCardEventListener } from '../custom/step_card_toggle_expanded';
-import
+import { initBigCardEventListener } from '../custom/big_card_event';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
