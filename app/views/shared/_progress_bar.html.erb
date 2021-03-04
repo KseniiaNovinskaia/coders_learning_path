@@ -1,6 +1,10 @@
 <div class="path-progress">
   <div class="progress">
-    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+    <div class="progress-bar" role="progressbar"
+    style="width:<%= "#{locals[:duration]}%" %>"
+    aria-valuenow="<%= locals[:duration] %>"
+    aria-valuemin="0"
+    aria-valuemax="100"><p><%= "#{locals[:duration]}%" %></p></div>
   </div>
   <!-- <i class="fas fa-trophy" ></i> -->
   <span class="iconify" data-icon="si-glyph:champion-cup" data-inline="false"></span>

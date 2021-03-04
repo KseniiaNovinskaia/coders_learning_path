@@ -1,18 +1,12 @@
+
 .banner {
   background-size: cover;
   background-color: #A9DCDB;
-  height: 608px;
-  width: 1920px;
+  height: 500px;
+  width: 100%;
   display: flex;
-  border-bottom: 12px solid #FE0760;
 }
 
-.banner img {
-  margin-top: 220px;
-  width: 254.07px;
-  height: 388.3px;
-  transform: scaleX(-1);
-}
 
 .card-start-learning {
   margin-top: 184px;
@@ -61,7 +55,7 @@
 .btn-account {
   color: #6C63FF;
   font-family: Roboto;
-  padding-left: 45px;
+  padding-left: 40px;
   padding-top: 20px;
 }
 
@@ -74,13 +68,20 @@
   margin-top: 69px;
   display: inline-block;
   padding-left: 107px;
-  padding-right: 107px;
+  margin-right: 0px;
+}
+
+.home-grid {
+  margin-top: 69px;
+  margin-left: 190px;
 }
 
 .card-about {
   width: 300px;
   text-align: center;
   margin: 50px;
+  margin-top: 10px;
+  margin-left: 40px;
 }
 
 .home {
@@ -102,4 +103,15 @@
 
 .purple {
   color: #6C63FF;
+}
+
+.card-about h4 {
+  margin-bottom: 30px;
+}
+
+#action-point {
+  margin: 40px;
+  margin-top: 60px;
+  margin-bottom: 0;
+  text-align: center;
 }

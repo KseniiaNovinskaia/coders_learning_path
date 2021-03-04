@@ -1,12 +1,41 @@
 // path#show
 .path-show-page-container{
   width: 100%;
+}
+
+.path-progress-bar-container {
+  margin-left: 360px;
+  width: 1540px;
+}
+
+.path-show-page-content-container {
   display: flex;
+  width: 100%;
 }
+
 .path-name-container {
-  width: 400px;
-  padding: 130px 100px 0 100px;
+  width: 360px;
+  text-align: center;
+  padding-top: 38px;
 }
+
 .path-show-page-middle-container {
   width: 1120px;
+}
+
+.container-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 420px;
+  padding-top: 38px;
+}
+
+//profiles
+.mt-70 {
+  margin-top: 70px;
+}
+
+.mt-30 {
+  margin-top: 30px;
 }
