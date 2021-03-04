@@ -13,8 +13,10 @@
       <h4>CODEWARS</h4>
       <h4>GITHUB</h4>
       <p>Github Username: <%= @user.user_github_data['login'] %></p>
-      <%= simple_form_for(@codewars_profile) do |f| %>
-        <%= f.input :codewars_username %>
+      <!-- IF A USER ALREADY HAVE A PROFILE DON'T GIVE THEM THE OPTION
+      TO ADD ANOTHER ONE -->
+      <%= simple_form_for (@codewars_profile) do |f| %>
+        <%= f.input :user_name %>
         <%# raise %>
         <%= f.submit %>
       <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_02_183958) do
+ActiveRecord::Schema.define(version: 2021_03_04_195114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2021_03_02_183958) do
     t.string "honor"
     t.string "overall_rank_name"
     t.string "overall_score"
-    t.string "code_challenges_authored_"
+    t.string "code_challenges_authored"
     t.string "code_challenges_completed"
     t.string "first_language_name"
     t.string "first_language_rank_name"
