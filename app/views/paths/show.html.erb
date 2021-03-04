@@ -17,10 +17,12 @@
        <div class="steps-container">
           <% @steps.each do |step| %>
             <%= render 'shared/step_card',
+
             locals: {
               step: step,
               completed: @step_data[step.id][:completion],
-              duration: @step_data[step.id][:duration]
+              duration: @step_data[step.id][:duration],
+              step_progress_id: @step_data[step.id][:step_progress_id]
             } %>
           <% end %>
        </div>
