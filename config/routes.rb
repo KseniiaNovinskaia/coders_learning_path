@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :paths, only: [ :index, :show ] do
-    resources :step_progresses, only: [ :create ]
+    resources :step_progresses, only: :create
+    resources :chatrooms, only: :show do
+      resources :messages, only: :create
+    end
   end
 
   resources :step_progresses, only: [ :update ]
