@@ -1,0 +1,41 @@
+
+<!-- Data Analyst  big card -->
+<div style="z-index: 100;">
+    <div class="path-card-expanded mt-4 pt-5 px-5" data-big-card-id="data_analyst">
+      <div>
+        <!-- Cup -->
+        <span class="iconify" data-icon="si-glyph:champion-cup" data-inline="false" style="font-size: 150px; color: #FE0760;"></span>
+         <h5 class="mt-4">"Data Analyst"</h5>
+        <!-- Main info -->
+        <div class="d-flex text-left" style="display: flex;">
+            <i class="far fa-calendar-check step-duration-symbol"></i>
+            <p>duration</p>
+        </div>
+        <div class="d-flex text-left" style="display: flex; align-items: center;">
+          <i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle mr-3"></i>
+          <p> Advanced</p>
+        </div>
+        <!-- Skills -->
+        <div class="d-flex">
+          <div class= "d-flex skill-icon" style="flex-direction: column; align-items: center;">
+            <span class="iconify" data-inline="false" data-icon="bx:bxl-python" style="font-size: 24px; color: #003366;"></span>
+            <p style="font-size: 15px;">Python</p>
+          </div>
+        </div>
+        <!-- Description -->
+        <div>
+          <p><strong>WHAT YOU FIND IN THIS PATH</strong></p>
+
+        </div>
+        <!-- This paths features modules from: -->
+        <div>
+          <p><strong>FEATURING MODULES FROM</strong></p>
+          <p>CODEACADEMY</p>
+          <p>CODEWARS</p>
+        </div>
+      </div>
+                <!-- Start button -->
+      <%= button_to "START", "/paths/1/step_progresses", class: "btn-card-big d-flex text-left" %>
+          <form method="post" action="step_progresses/create"></form>
+    </div>
+</div>

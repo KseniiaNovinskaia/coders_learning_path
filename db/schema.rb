@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_20_105200) do
+ActiveRecord::Schema.define(version: 2021_03_06_105055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,11 +36,30 @@ ActiveRecord::Schema.define(version: 2021_02_20_105200) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "path_id", null: false
+    t.index ["path_id"], name: "index_chatrooms_on_path_id"
+  end
+
   create_table "codewars_profiles", force: :cascade do |t|
     t.string "user_name"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "honor"
+    t.string "overall_rank_name"
+    t.string "overall_score"
+    t.string "code_challenges_authored"
+    t.string "code_challenges_completed"
+    t.string "first_language_name"
+    t.string "first_language_rank_name"
+    t.string "first_language_score"
+    t.string "second_language_name"
+    t.string "second_language_rank_name"
+    t.string "second_language_score"
     t.index ["user_id"], name: "index_codewars_profiles_on_user_id"
   end
 
@@ -50,6 +69,16 @@ ActiveRecord::Schema.define(version: 2021_02_20_105200) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["path_id"], name: "index_learning_groups_on_path_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "paths", force: :cascade do |t|
@@ -108,8 +137,11 @@ ActiveRecord::Schema.define(version: 2021_02_20_105200) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "chatrooms", "paths"
   add_foreign_key "codewars_profiles", "users"
   add_foreign_key "learning_groups", "paths"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "step_progresses", "paths"
   add_foreign_key "step_progresses", "steps"
   add_foreign_key "step_progresses", "users"

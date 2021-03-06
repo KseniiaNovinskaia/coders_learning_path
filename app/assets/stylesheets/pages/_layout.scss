@@ -25,10 +25,16 @@
 
 .container-right {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   width: 420px;
   padding-top: 38px;
+}
+
+//edit user
+.edit-user-container {
+  width: 25%;
+  margin: 2em auto;
 }
 
 //profiles
@@ -40,8 +46,54 @@
   margin-top: 30px;
 }
 
-//edit user
-.edit-user-container {
-  width: 25%;
-  margin: 2em auto;
+.w-third {
+  width: 33.33333%;
+}
+
+.w-47 {
+  width: 47%;
+}
+
+.mr-60 {
+  margin-right: 60px;
+}
+
+.profile-card {
+  box-sizing: border-box;
+  border-radius: 0px 0px 20px 0px;
+  border: 2px solid $text-color;
+  position: relative;
+  background-color: $cb-white;
+}
+
+.profile-card-content {
+  margin: 24px 32px;
+  p {
+    line-height: 18px;
+  }
+}
+
+.profile-card-see-btn {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  background-color: $text-color;
+  box-sizing: border-box;
+  padding: 10px 20px 10px 20px;
+  border-radius: 0px 0px 20px 0px;
+  h6 {
+    color: $cb-white;
+  }
+}
+
+.profile-cup {
+  font-size: 108px;
+  // margin-top: 34px;
+  // margin-bottom: 33px;
+  color: #E6E6E6;
+  // flex-basis: auto;
+}
+
+.completed-yellow {
+  color: #F3C72A;
 }
