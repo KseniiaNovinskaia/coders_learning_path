@@ -9,12 +9,74 @@
     </div>
     <div class="col-7">
       <h2>YOUR PATHS</h2>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias animi quos reiciendis rerum atque dignissimos nemo pariatur earum voluptas eum, beatae at tempore tempora nostrum tenetur fugit velit exercitationem error?</p>
+      <!-- IF I WAS ABLE TO DO @USER.PATHS.EACH I WOULD BE BETTER ADVISED
+      TO INSERT A GRID HERE, THAT FILLS ACCORDING TO THE NUMBER OF PATHS, ALSO
+      ADDING NEW ROWS AS THEY FILL -->
+      <div class="d-flex justify-content-between">
+        <div class="w-third mr-60 profile-card">
+          <div class="profile-card-content">
+            <h6>Mobile Developer</h6>
+            <span class="iconify profile-cup completed-yellow" data-icon="si-glyph:champion-cup" data-inline="false"></span>
+            <p><i class="fas fa-check-circle step-card-completed-icon ml-32"></i> Completed</p>
+          </div>
+          <div class="profile-card-see-btn">
+            <h6>See</h6>
+          </div>
+        </div>
+        <div class="card w-third mr-60">
+          <h6 class="heading-profile-card">Full Stack Developer</h6>
+        </div>
+        <div class="card w-third">
+          <h6 class="heading-profile-card">ML Developer</h6>
+        </div>
+      </div>
       <h2>STATISTICS</h2>
       <h4>CODEWARS</h4>
+      <% if @user.codewars_profile %>
+        <div class="d-flex justify-content-between">
+          <div class="w-third mr-60 profile-card">
+            <div class="profile-card-content">
+              <h6>Basic Information</h6>
+                <p>Honor: <%= @user.codewars_profile.honor %></p>
+                <p>Overall Rank: <%= @user.codewars_profile.overall_rank_name %></p>
+                <p>Overall Score: <%= @user.codewars_profile.overall_score %></p>
+                <p>Code Challenges Authored: <%= @user.codewars_profile.code_challenges_authored %></p>
+                <p>Code Challenges Completed: <%= @user.codewars_profile.code_challenges_completed %></p>
+            </div>
+          </div>
+          <div class="w-third mr-60 profile-card">
+            <div class="profile-card-content">
+              <h6><%= @user.codewars_profile.first_language_name %></h6>
+                <p>Rank: <%= @user.codewars_profile.first_language_rank_name %></p>
+                <p>Score: <%= @user.codewars_profile.first_language_score %></p>
+            </div>
+          </div>
+          <div class="w-third mr-60 profile-card">
+            <div class="profile-card-content">
+              <h6><%= @user.codewars_profile.second_language_name %></h6>
+                <p>Rank: <%= @user.codewars_profile.second_language_rank_name %></p>
+                <p>Score: <%= @user.codewars_profile.second_language_score %></p>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <%= link_to "Add external profile", edit_profile_path, :class => "btn-edit-profile" %>
+      <% end %>
       <h4>GITHUB</h4>
-      <p>Github Username: <%= @user.user_github_data['login'] %></p>
-      <%= link_to "Add a Codewars Profile", edit_profile_path %>
+      <div class="d-flex justify-content-between">
+        <div class="w-third mr-60 profile-card">
+          <div class="profile-card-content">
+            <h6>Basic Information</h6>
+            <p>Github Username: <%= @user.user_github_data['login'] %></p>
+          </div>
+        </div>
+        <div class="card w-third mr-60">
+          <h6 class="heading-profile-card">Full Stack Developer</h6>
+        </div>
+        <div class="card w-third">
+          <h6 class="heading-profile-card">ML Developer</h6>
+        </div>
+      </div>
     </div>
   </div>
   <div class="col-1"></div>
