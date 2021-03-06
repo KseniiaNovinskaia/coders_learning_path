@@ -44,6 +44,10 @@
   width: 33.33333%;
 }
 
+.w-47 {
+  width: 47%;
+}
+
 .mr-60 {
   margin-right: 60px;
 }
@@ -65,8 +69,8 @@
 
 .profile-card-see-btn {
   position: absolute;
-  bottom: 0px;
-  right: 0px;
+  bottom: -2px;
+  right: -2px;
   background-color: $text-color;
   box-sizing: border-box;
   padding: 10px 20px 10px 20px;

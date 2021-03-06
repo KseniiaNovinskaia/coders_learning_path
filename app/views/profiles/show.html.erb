@@ -5,14 +5,24 @@
       <%= image_tag "http://res.cloudinary.com/dqopwdgta/image/upload/c_scale,h_65,w_65/v1/Home/profile-avatar_gdki3u.png", class: "avatar-profile" %>
       <h1 class="mt-30"><%= @user.name %></h1>
       <p class="mt-30"><%= @user.created_at.strftime("Joined on %d/%m/%Y")%> </p>
-      <%= link_to "Add external profile", edit_profile_path, :class => "btn-edit-profile" %>
+      <%# link_to "Add external profile", edit_profile_path, :class => "btn-edit-profile" %>
     </div>
-    <div class="col-7">
-      <h2>YOUR PATHS</h2>
+    <div class="col-7" style="margin-bottom: 32px;">
+      <h2 style="margin-bottom: 20px;">YOUR PATHS</h2>
       <!-- IF I WAS ABLE TO DO @USER.PATHS.EACH I WOULD BE BETTER ADVISED
       TO INSERT A GRID HERE, THAT FILLS ACCORDING TO THE NUMBER OF PATHS, ALSO
       ADDING NEW ROWS AS THEY FILL -->
       <div class="d-flex justify-content-between">
+        <div class="w-third mr-60 profile-card">
+          <div class="profile-card-content">
+            <h6>Full Stack Developer</h6>
+            <span class="iconify profile-cup completed-yellow" data-icon="si-glyph:champion-cup" data-inline="false"></span>
+            <p><i class="fas fa-check-circle step-card-completed-icon ml-32"></i> Completed</p>
+          </div>
+          <div class="profile-card-see-btn">
+            <h6>See</h6>
+          </div>
+        </div>
         <div class="w-third mr-60 profile-card">
           <div class="profile-card-content">
             <h6>Mobile Developer</h6>
@@ -23,46 +33,46 @@
             <h6>See</h6>
           </div>
         </div>
-        <div class="card w-third mr-60">
-          <h6 class="heading-profile-card">Full Stack Developer</h6>
-        </div>
-        <div class="card w-third">
-          <h6 class="heading-profile-card">ML Developer</h6>
+        <div class="w-third profile-card">
+          <div class="profile-card-content">
+            <h6>Games Developer</h6>
+            <span class="iconify profile-cup completed-yellow" data-icon="si-glyph:champion-cup" data-inline="false"></span>
+            <p><i class="fas fa-check-circle step-card-completed-icon ml-32"></i> Completed</p>
+          </div>
+          <div class="profile-card-see-btn">
+            <h6>See</h6>
+          </div>
         </div>
       </div>
-      <h2>STATISTICS</h2>
-      <h4>CODEWARS</h4>
+      <h2 style="margin-top: 46px; margin-bottom: 20px;">EXTERNAL PROFILES</h2>
       <% if @user.codewars_profile %>
         <div class="d-flex justify-content-between">
-          <div class="w-third mr-60 profile-card">
+          <div class="w-47 profile-card">
             <div class="profile-card-content">
-              <h6>Basic Information</h6>
+              <h6>Codewars Profile</h6>
                 <p>Honor: <%= @user.codewars_profile.honor %></p>
                 <p>Overall Rank: <%= @user.codewars_profile.overall_rank_name %></p>
                 <p>Overall Score: <%= @user.codewars_profile.overall_score %></p>
                 <p>Code Challenges Authored: <%= @user.codewars_profile.code_challenges_authored %></p>
                 <p>Code Challenges Completed: <%= @user.codewars_profile.code_challenges_completed %></p>
+                <p><%= @user.codewars_profile.first_language_name.capitalize %>: <%= @user.codewars_profile.first_language_rank_name %>, score <%= @user.codewars_profile.first_language_score %></p>
+                <% if @user.codewars_profile.second_language_name != 'None chosen' %>
+                  <p><%= @user.codewars_profile.second_language_name.capitalize %>: <%= @user.codewars_profile.second_language_rank_name %>, score <%= @user.codewars_profile.second_language_score %></p>
+                <% end %>
             </div>
           </div>
-          <div class="w-third mr-60 profile-card">
+          <div class="w-47 profile-card">
             <div class="profile-card-content">
-              <h6><%= @user.codewars_profile.first_language_name %></h6>
-                <p>Rank: <%= @user.codewars_profile.first_language_rank_name %></p>
-                <p>Score: <%= @user.codewars_profile.first_language_score %></p>
-            </div>
-          </div>
-          <div class="w-third mr-60 profile-card">
-            <div class="profile-card-content">
-              <h6><%= @user.codewars_profile.second_language_name %></h6>
-                <p>Rank: <%= @user.codewars_profile.second_language_rank_name %></p>
-                <p>Score: <%= @user.codewars_profile.second_language_score %></p>
+              <h6>GitHub Profile</h6>
+                <p>aölsdkfjöalsdkjföalksdjf</p>
+                <p>aölkdj fölaksdj föalsdjkf </p>
             </div>
           </div>
         </div>
       <% else %>
-        <%= link_to "Add external profile", edit_profile_path, :class => "btn-edit-profile" %>
+        <%= link_to "Add external profiles", edit_profile_path, :class => "btn-edit-profile" %>
       <% end %>
-      <h4>GITHUB</h4>
+      <!-- <h4>GITHUB</h4>
       <div class="d-flex justify-content-between">
         <div class="w-third mr-60 profile-card">
           <div class="profile-card-content">
@@ -76,7 +86,7 @@
         <div class="card w-third">
           <h6 class="heading-profile-card">ML Developer</h6>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
   <div class="col-1"></div>
