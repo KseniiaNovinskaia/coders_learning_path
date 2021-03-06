@@ -4,7 +4,7 @@
 
       <% if path.name == "Full Stack Developer" %>
         <% id = "full_stack_developer" %>
-      <% elsif path.name == "Machine Learning" %>
+      <% elsif path.name == "ML Developer " %>
         <% id = "ml_developer" %>
       <% elsif path.name == "Data Analyst" %>
         <% id = "data_analyst" %>
@@ -52,7 +52,7 @@
                 <% end %>
               </div>
               <div>
-                <p class="btn-card-sm text-center"> <%#=@path.duration_hours%> h <%#=#@path.duration_minutes%> min </p>
+                <p class="btn-card-sm text-center"> <%=path.duration_hours%> h <%=path.duration_minutes%> min </p>
               </div>
             </div>
           </div>

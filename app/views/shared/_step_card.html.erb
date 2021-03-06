@@ -63,7 +63,7 @@
         <%#= link_to "Done", step_progress_path(locals[:step_progress_id]), method: :patch, class: 'btn-accordion btn-accordion-text' %>
         <%#= link_to "Click Here", page_path, :id => 'login', "data-toggle" => "modal", 'data-target' => '#loginModal' %>
         <%= link_to "Done", step_progress_path(locals[:step_progress_id]), class: 'btn-accordion btn-accordion-text', data: {toggle: "modal", target: "#step-modal"} %>
-        <%= render 'shared/step_card_modal', step_progress_id: locals[:step_progress_id] %>
+
 
         <!-- Here I remove the mathod: :patch and just trigger the modal data toggle -->
       </div>

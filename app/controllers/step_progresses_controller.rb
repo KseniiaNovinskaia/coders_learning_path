@@ -8,10 +8,10 @@ class StepProgressesController < ApplicationController
 
   def update
     @step_progress = StepProgress.find(params[:id])
+    authorize @step_progress
     @path = @step_progress.step.path
     @step_progress.update(completion: true)
     redirect_to path_path(@path)
-    authorize @step_progress
   end
 end
 

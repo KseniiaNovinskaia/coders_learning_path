@@ -21,6 +21,7 @@
               duration: @step_data[step.id][:duration],
               step_progress_id: @step_data[step.id][:step_progress_id]
             } %>
+            <%= render 'shared/step_card_modal', step_progress_id: @step_data[step.id][:step_progress_id] %>
           <% end %>
        </div>
     </div>
