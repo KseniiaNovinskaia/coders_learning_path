@@ -2,7 +2,16 @@
   <div class="row mt-70">
     <div class="col-1"></div>
     <div class="col-3">
-      <%= image_tag "http://res.cloudinary.com/dqopwdgta/image/upload/c_scale,h_65,w_65/v1/Home/profile-avatar_gdki3u.png", class: "avatar-profile" %>
+      <%= link_to edit_user_registration_path(@user), class: 'edit-avatar-link' do  %>
+        <% if @user.avatar.attached? %>
+          <%= cl_image_tag @user.avatar.key, alt: "user avatar", class: "avatar-profile" %>
+        <% else %>
+          <%= image_tag "http://res.cloudinary.com/dqopwdgta/image/upload/c_scale,h_65,w_65/v1/Home/profile-avatar_gdki3u.png", class: "avatar-profile" %>
+        <% end %>
+      <% end %>
+      <%#= link_to edit_user_registration_path(@user), class: 'edit-avatar-link' do %>
+        <!-- <i class="fas fa-pen"></i> -->
+      <%# end %>
       <h1 class="mt-30"><%= @user.name %></h1>
       <p class="mt-30"><%= @user.created_at.strftime("Joined on %d/%m/%Y")%> </p>
     </div>
