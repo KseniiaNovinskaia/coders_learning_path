@@ -51,12 +51,22 @@
     </div>
 
     <div class="btn-accordion-container">
-      <%= render 'shared/btn_accordion',
+      <div>
+            <%= render 'shared/btn_accordion',
       locals: {
         completed: locals[:completed],
         url: locals[:step].url
       } %>
+
+      </div>
+      <div style="margin-top: 20px;">
+        <%= link_to "Done", step_progress_path(locals[:step_progress_id]), method: :patch, class: 'btn-accordion btn-accordion-text' %>
+      </div>
     </div>
+
+
+
+
 
   </div>
 

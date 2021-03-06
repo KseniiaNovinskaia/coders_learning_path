@@ -20,7 +20,8 @@ class PathsController < ApplicationController
       id = step.id
       @step_data[id] = {
         completion: @step_progresses.where(step_id: id).first.completion,
-        duration: step.duration_string
+        duration: step.duration_string,
+        step_progress_id: @step_progresses.where(step_id: id).first.id
       }
     end
   end
