@@ -64,9 +64,9 @@
                 <p>Overall Score: <%= @user.codewars_profile.overall_score %></p>
                 <p>Code Challenges Authored: <%= @user.codewars_profile.code_challenges_authored %></p>
                 <p>Code Challenges Completed: <%= @user.codewars_profile.code_challenges_completed %></p>
-                <p><%= @user.codewars_profile.first_language_name.capitalize %>: <%= @user.codewars_profile.first_language_rank_name %>, score <%= @user.codewars_profile.first_language_score %></p>
+                <p><%= @user.codewars_profile.first_language_name %>: <%= @user.codewars_profile.first_language_rank_name %>, score <%= @user.codewars_profile.first_language_score %></p>
                 <% if @user.codewars_profile.second_language_name != 'None chosen' %>
-                  <p><%= @user.codewars_profile.second_language_name.capitalize %>: <%= @user.codewars_profile.second_language_rank_name %>, score <%= @user.codewars_profile.second_language_score %></p>
+                  <p><%= @user.codewars_profile.second_language_name %>: <%= @user.codewars_profile.second_language_rank_name %>, score <%= @user.codewars_profile.second_language_score %></p>
                 <% end %>
             </div>
           </div>
