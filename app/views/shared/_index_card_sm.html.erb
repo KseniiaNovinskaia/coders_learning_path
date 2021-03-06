@@ -1,8 +1,19 @@
 
     <% @paths.each do |path| %>
-    <%= link_to path_path(path), class: 'd-block' do %>
 
-      <div class="p_card_sm" style="background-color: #003366">
+
+      <% if path.name == "Full Stack Developer" %>
+        <% id = "full_stack_developer" %>
+      <% elsif path.name == "Machine Learning" %>
+        <% id = "ml_developer" %>
+      <% elsif path.name == "Data Analyst" %>
+        <% id = "data_analyst" %>
+      <% else %>
+        <% id = "ios-developer" %>
+      <% end %>
+
+
+      <div class="p_card_sm card_sm" id="<%= id %>" style="background-color: #003366">
           <div class="p_card_sm  d-flex flex-column text-left">
             <div style="margin-left: 20px; margin-top: 15px;">
               <p>I want to become a</p>
@@ -12,7 +23,7 @@
             </div>
             <div class="flex-grow-1 text-center pt-2">
               <% if path.name == "Full Stack Developer" %>
-                  <%= cl_image_tag("Index/FULL_STACK_DEVELOPER_pmau6g.svg") %>
+                  <%= cl_image_tag("Index/FULL_STACK_DEVELOPER_pmau6g.svg")%>
                 <% elsif path.name == "ML Developer" %>
                  <%= cl_image_tag("Index/ML_developer_gidze2.svg")%>
                 <% elsif path.name == "Data Analyst" %>
@@ -41,14 +52,16 @@
                 <% end %>
               </div>
               <div>
-                <p class="btn-card-sm text-center"> lessons </p>
+                <p class="btn-card-sm text-center"> <%#=@path.duration_hours%> h <%#=#@path.duration_minutes%> min </p>
               </div>
             </div>
           </div>
         </div>
 
-      <% end %>
-    <% end %>
+
+
+<% end %>
+
 
 
 
