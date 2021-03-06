@@ -5,4 +5,5 @@ class ProfilesController < ApplicationController
     @codewars_profile = CodewarsProfile.new
   end
 
+  # Profiles controller worked when it had only the show route
 end
