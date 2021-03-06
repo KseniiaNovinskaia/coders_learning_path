@@ -30,7 +30,8 @@ class CodewarsProfilesController < ApplicationController
     if @codewars_profile.save
       redirect_to user_profile_path(current_user.name)
     else
-      redirect_to root_path
+      redirect_to user_profile_path(current_user.name)
+      # render 'profiles/edit'
     end
     # render new in the profile controller
     # this goes on for all lines of the codewars table
