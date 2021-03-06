@@ -45,48 +45,10 @@
         </div>
       </div>
       <h2 style="margin-top: 46px; margin-bottom: 20px;">EXTERNAL PROFILES</h2>
-      <% if @user.codewars_profile %>
-        <div class="d-flex justify-content-between">
-          <div class="w-47 profile-card">
-            <div class="profile-card-content">
-              <h6>Codewars Profile</h6>
-                <p>Honor: <%= @user.codewars_profile.honor %></p>
-                <p>Overall Rank: <%= @user.codewars_profile.overall_rank_name %></p>
-                <p>Overall Score: <%= @user.codewars_profile.overall_score %></p>
-                <p>Code Challenges Authored: <%= @user.codewars_profile.code_challenges_authored %></p>
-                <p>Code Challenges Completed: <%= @user.codewars_profile.code_challenges_completed %></p>
-                <p><%= @user.codewars_profile.first_language_name.capitalize %>: <%= @user.codewars_profile.first_language_rank_name %>, score <%= @user.codewars_profile.first_language_score %></p>
-                <% if @user.codewars_profile.second_language_name != 'None chosen' %>
-                  <p><%= @user.codewars_profile.second_language_name.capitalize %>: <%= @user.codewars_profile.second_language_rank_name %>, score <%= @user.codewars_profile.second_language_score %></p>
-                <% end %>
-            </div>
-          </div>
-          <div class="w-47 profile-card">
-            <div class="profile-card-content">
-              <h6>GitHub Profile</h6>
-                <p>aölsdkfjöalsdkjföalksdjf</p>
-                <p>aölkdj fölaksdj föalsdjkf </p>
-            </div>
-          </div>
-        </div>
-      <% else %>
-        <%= link_to "Add external profiles", edit_profile_path, :class => "btn-edit-profile" %>
+      <%= simple_form_for (@codewars_profile) do |f| %>
+        <%= f.input :user_name %>
+        <%= f.submit %>
       <% end %>
-      <!-- <h4>GITHUB</h4>
-      <div class="d-flex justify-content-between">
-        <div class="w-third mr-60 profile-card">
-          <div class="profile-card-content">
-            <h6>Basic Information</h6>
-            <p>Github Username: <%= @user.user_github_data['login'] %></p>
-          </div>
-        </div>
-        <div class="card w-third mr-60">
-          <h6 class="heading-profile-card">Full Stack Developer</h6>
-        </div>
-        <div class="card w-third">
-          <h6 class="heading-profile-card">ML Developer</h6>
-        </div>
-      </div> -->
     </div>
   </div>
   <div class="col-1"></div>

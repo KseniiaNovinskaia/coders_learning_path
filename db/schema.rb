@@ -49,6 +49,17 @@ ActiveRecord::Schema.define(version: 2021_03_06_105055) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "honor"
+    t.string "overall_rank_name"
+    t.string "overall_score"
+    t.string "code_challenges_authored"
+    t.string "code_challenges_completed"
+    t.string "first_language_name"
+    t.string "first_language_rank_name"
+    t.string "first_language_score"
+    t.string "second_language_name"
+    t.string "second_language_rank_name"
+    t.string "second_language_score"
     t.index ["user_id"], name: "index_codewars_profiles_on_user_id"
   end
 

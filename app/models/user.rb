@@ -1,11 +1,11 @@
 class User < ApplicationRecord
   require 'open-uri'
 
-  has_many :paths, through: :step_progresses
   has_many :step_progresses, dependent: :destroy
+  has_many :paths, through: :step_progresses
   has_many :users_learning_groups, dependent: :destroy
   has_one :codewars_profile, dependent: :destroy
-  has_many :step_progresses
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -19,10 +19,10 @@ class User < ApplicationRecord
     JSON.parse(user_serialized)
   end
 
-  def user_codewars_data
-    url = 'https://www.codewars.com/api/v1/users/Kimon-Haars'
-    user_serialized = open(url).read
-    JSON.parse(user_serialized)
-  end
+  # def user_codewars_data
+  #   url = 'https://www.codewars.com/api/v1/users/Kimon-Haars'
+  #   user_serialized = open(url).read
+  #   JSON.parse(user_serialized)
+  # end
 
 end
