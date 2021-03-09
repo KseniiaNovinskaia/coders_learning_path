@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_06_105055) do
+ActiveRecord::Schema.define(version: 2021_03_09_164943) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,19 @@ ActiveRecord::Schema.define(version: 2021_03_06_105055) do
     t.string "second_language_rank_name"
     t.string "second_language_score"
     t.index ["user_id"], name: "index_codewars_profiles_on_user_id"
+  end
+
+  create_table "github_profiles", force: :cascade do |t|
+    t.string "user_name"
+    t.string "public_repos"
+    t.string "public_gists"
+    t.string "followers"
+    t.string "following"
+    t.string "joined_github"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_github_profiles_on_user_id"
   end
 
   create_table "learning_groups", force: :cascade do |t|
@@ -139,6 +152,7 @@ ActiveRecord::Schema.define(version: 2021_03_06_105055) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "chatrooms", "paths"
   add_foreign_key "codewars_profiles", "users"
+  add_foreign_key "github_profiles", "users"
   add_foreign_key "learning_groups", "paths"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
