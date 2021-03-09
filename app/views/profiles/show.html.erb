@@ -14,7 +14,7 @@
       <%# end %>
       <h1 class="mt-30"><%= @user.name %></h1>
       <p class="mt-30"><%= @user.created_at.strftime("Joined on %d/%m/%Y")%> </p>
-      <%# link_to "Add external profile", edit_profile_path, :class => "btn-edit-profile" %>
+      <%# link_to "Add external profiles", edit_profile_path, :class => "btn-edit-profile" %>
     </div>
     <div class="col-7" style="margin-bottom: 32px;">
       <h2 style="margin-bottom: 20px;">YOUR PATHS</h2>
@@ -73,8 +73,8 @@
           <div class="w-47 profile-card">
             <div class="profile-card-content">
               <h6>GitHub Profile</h6>
-                <p>aölsdkfjöalsdkjföalksdjf</p>
-                <p>aölkdj fölaksdj föalsdjkf </p>
+                <p>Public Repos: <%= @user.github_profile.public_repos %> </p>
+                <p>Public Gists: <%= @user.github_profile.public_gists %> </p>
             </div>
           </div>
         </div>

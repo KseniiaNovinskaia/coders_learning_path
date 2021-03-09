@@ -46,7 +46,12 @@
       </div>
       <h2 style="margin-top: 46px; margin-bottom: 20px;">EXTERNAL PROFILES</h2>
       <%= simple_form_for (@codewars_profile) do |f| %>
-        <%= f.input :user_name %>
+        <%= f.input :user_name, label: 'Codewars username' %>
+        <%= f.submit %>
+      <% end %>
+      <br>
+      <%= simple_form_for (@github_profile) do |f| %>
+        <%= f.input :user_name, label: 'GitHub username' %>
         <%= f.submit %>
       <% end %>
     </div>
