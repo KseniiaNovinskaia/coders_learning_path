@@ -11,6 +11,8 @@ class PathsController < ApplicationController
     @step_progresses = @path.step_progresses.where(user_id: current_user.id)
     set_step_data
     set_path_progress
+    @chatroom = @path.chatroom
+    @message = Message.new
   end
 
   private

@@ -63,7 +63,6 @@
   font-weight: bold;
 }
 
-
 .btn-modal:hover{
   opacity: 1;
   font-size: 40px;
@@ -72,23 +71,13 @@
   transition: background-color;
   text-decoration: none !important;
   }
-// .btn-card-big-secondary {
-//   height: 65.048583984375px;
-//   width: 208.7454833984375px;
-//   left: 0px;
-//   top: 0px;
-//   border-radius: [object Object]px;
-//   background-color: $hero-color;
-//   padding: 10px 42px;
-//   color: $cb-white;
-//   margin-bottom: 0 !important;
-//   font-family: Poppins;
-//   font-size: 14px;
-//   font-weight: bold;
-//   text-decoration: none !important;
-// }
 
-// .btn-card-big-secondary:hover{
-//   background-color: $alert;
-//   transition: background-color 0.5s ease;
-//   }
+.btn-edit-profile {
+  padding: 15px 32px;
+  border-radius: 4px;
+  border: 1px solid $text-color;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  @extend p;
+}

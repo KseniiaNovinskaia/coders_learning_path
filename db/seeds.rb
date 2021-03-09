@@ -194,3 +194,14 @@ p "Added a CODEWARS_PROFILE"
 p "-------------------------"
 p "--- seeding complete! ---"
 p "-------------------------"
+
+
+
+Path.all.each do |path|
+  Chatroom.create!(
+    name: path.name,
+    path_id: path.id
+    )
+end
+
+p "Chatrooms are created"

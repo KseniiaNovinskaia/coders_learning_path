@@ -1,0 +1,55 @@
+<div class="container-fluid">
+  <div class="row mt-70">
+    <div class="col-1"></div>
+    <div class="col-3">
+      <%= image_tag "http://res.cloudinary.com/dqopwdgta/image/upload/c_scale,h_65,w_65/v1/Home/profile-avatar_gdki3u.png", class: "avatar-profile" %>
+      <h1 class="mt-30"><%= @user.name %></h1>
+      <p class="mt-30"><%= @user.created_at.strftime("Joined on %d/%m/%Y")%> </p>
+      <%# link_to "Add external profile", edit_profile_path, :class => "btn-edit-profile" %>
+    </div>
+    <div class="col-7" style="margin-bottom: 32px;">
+      <h2 style="margin-bottom: 20px;">YOUR PATHS</h2>
+      <!-- IF I WAS ABLE TO DO @USER.PATHS.EACH I WOULD BE BETTER ADVISED
+      TO INSERT A GRID HERE, THAT FILLS ACCORDING TO THE NUMBER OF PATHS, ALSO
+      ADDING NEW ROWS AS THEY FILL -->
+      <div class="d-flex justify-content-between">
+        <div class="w-third mr-60 profile-card">
+          <div class="profile-card-content">
+            <h6>Full Stack Developer</h6>
+            <span class="iconify profile-cup completed-yellow" data-icon="si-glyph:champion-cup" data-inline="false"></span>
+            <p><i class="fas fa-check-circle step-card-completed-icon ml-32"></i> Completed</p>
+          </div>
+          <div class="profile-card-see-btn">
+            <h6>See</h6>
+          </div>
+        </div>
+        <div class="w-third mr-60 profile-card">
+          <div class="profile-card-content">
+            <h6>Mobile Developer</h6>
+            <span class="iconify profile-cup completed-yellow" data-icon="si-glyph:champion-cup" data-inline="false"></span>
+            <p><i class="fas fa-check-circle step-card-completed-icon ml-32"></i> Completed</p>
+          </div>
+          <div class="profile-card-see-btn">
+            <h6>See</h6>
+          </div>
+        </div>
+        <div class="w-third profile-card">
+          <div class="profile-card-content">
+            <h6>Games Developer</h6>
+            <span class="iconify profile-cup completed-yellow" data-icon="si-glyph:champion-cup" data-inline="false"></span>
+            <p><i class="fas fa-check-circle step-card-completed-icon ml-32"></i> Completed</p>
+          </div>
+          <div class="profile-card-see-btn">
+            <h6>See</h6>
+          </div>
+        </div>
+      </div>
+      <h2 style="margin-top: 46px; margin-bottom: 20px;">EXTERNAL PROFILES</h2>
+      <%= simple_form_for (@codewars_profile) do |f| %>
+        <%= f.input :user_name %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-1"></div>
+</div>
