@@ -1,107 +1,109 @@
+  <!-- Cup - title - description -->
+  <% path_name  %>
+  <% if path_name == "Full Stack Developer" %>
+    <span class="iconify"  data-icon="si-glyph:champion-cup" data-inline="false" style="font-size: 150px; color: #F3C72A;"></span>
+    <h5 class="mt-4">The Full Stack Developer Path</h5>
+  <% elsif path_name == "ML Developer" %>
+    <span class="iconify"  data-icon="si-glyph:champion-cup" data-inline="false" style="font-size: 150px; color: #997029;"></span>
+    <h5 class="mt-4">The ML Developer Path</h5>
+  <% elsif path_name == "Data Analyst" %>
+    <span class="iconify"  data-icon="si-glyph:champion-cup" data-inline="false" style="font-size: 150px; color: #FE0760;"></span>
+    <h5 class="mt-4">The Data Analyst Path</h5>
+  <% else %>
+    <span class="iconify" data-icon="si-glyph:champion-cup"  data-inline="false" style="font-size: 150px; color: #6C63FF;"></span>
+    <h5 class="mt-4">The iOs Developer Path</h5>
+  <% end %>
+  <br>
+  <div style="border-bottom: solid 1px #E5E5E5; border-top: solid 1px #E5E5E5; font-size: 15px; color: #A1AAFC; font-weight: bold; padding-bottom: 0px;">
+    WHAT THIS PATH IS ABOUT
+  </div>
+  <p>
+    <br>
+    <%= description  %>
+    <br> <br>
+  </p>
 
- <% @paths.each do |path| %>
-  <div style="z-index: 100;">
-    <% if path.name == "Full Stack Developer" %>
-      <% id = 'full_stack_developer' %>
-    <% elsif path.name == "Data Analyst" %>
-      <% id = 'data_analyst' %>
-    <% elsif path.name == "ML Developer" %>
-      <% id = 'ml_developer' %>
-    <%  else %>
-      <% id = 'ios-developer' %>
-    <% end %>
-
-    <div class="path-card-expanded mt-4 pt-5 px-5" data-big-card-id="<%= id %>" >
-
-      <!-- Cup -->
-      <% if path.name == "Full Stack Developer" %>
-        <span class="iconify"  data-icon="si-glyph:champion-cup" data-inline="false" style="font-size: 150px; color: #F3C72A;"></span>
-        <h5 class="mt-4">"Full Stack Developer"</h5>
-      <% elsif path.name == "ML Developer" %>
-        <span class="iconify"  data-inline="false" style="font-size: 150px; color: #997029;"></span>
-        <h5 class="mt-4">"ML Developer"</h5>
-      <% elsif path.name == "Data Analyst" %>
-        <span class="iconify"  data-inline="false" style="font-size: 150px; color: #FE0760;"></span>
-        <h5 class="mt-4">"Data Analyst"</h5>
+  <!-- Main info -->
+  <!-- Level -->
+  <div style="border-bottom: solid 1px #E5E5E5; border-top: solid 1px #E5E5E5; font-size: 15px; color: #A1AAFC; font-weight: bold; padding-bottom: 0px;">
+    LEVEL
+  </div>
+  <p>
+    <% requirement  %>
+      <% if requirement == "beginner" %>
+        <div class="d-flex align-items-center" style="margin-top: 7px; color: #003366;">
+          <i class="fas fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle mr-3"></i>
+          <p><%= "Beginner" %></p>
+        </div>
+      <% elsif requirement == "intermediate"%>
+        <div class="d-flex align-items-center" style="margin-top: 7px; color: #003366;">
+          <i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle mr-3"></i>
+          <p><%= "Intermediate" %></p>
+        </div>
+      <% else %>
+        <div class="d-flex align-items-center" style="margin-top: 7px; color: #003366;">
+          <i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle mr-3"></i>
+          <p><%= "Advanced" %></p>
+        </div>
       <% end %>
-        <!-- Main info -->
-      <div class="d-flex text-left" style="display: flex;">
-        <i class="far fa-calendar-check step-duration-symbol"></i>
-        <p> DURATION </p>
-      </div>
-        <!-- REQUIREMENTS -->
-      <div class="d-flex text-left" style="display: flex; align-items: center;">
-        <% if path.requirement == "beginner" %>
-          <div class="d-flex align-items-center" style="margin-left: 20px; margin-top: 15px;">
-            <i class="fas fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle mr-3"></i>
-            <p><%= "Beginner" %></p>
+  </p>
+  <!-- Duration -->
+  <div style="border-bottom: solid 1px #E5E5E5; border-top: solid 1px #E5E5E5; font-size: 15px; color: #A1AAFC; font-weight: bold; padding-bottom: 0px;">
+    DURATION
+  </div>
+  <div class="d-flex text-left align-items-center" style="display: flex; padding: 10px">
+    <i class="far fa-calendar-check step-duration-symbol" style=" font-size: 20px; color: #003366;"></i>
+    <p> <%= duration_hours %> h <%= duration_minutes%> min</p>
+  </div>
+  <!-- Skills -->
+  <div style="border-bottom: solid 1px #E5E5E5; border-top: solid 1px #E5E5E5; font-size: 15px; color: #A1AAFC; font-weight: bold; padding-bottom: 0px;">
+    SKILLS
+  </div>
+  <p>
+  <% language  %>
+    <div class="d-flex" style="margin-top: 3px; ">
+      <div class= "d-flex skill-icon" style="flex-direction: column; align-items: center;">
+        <% if language == "ruby javascript html css rails" %>
+          <div class="d-flex">
+            <div class= "d-flex skill-icon" style="flex-direction: column; align-items: center;">
+              <span class="iconify" data-inline="false" data-icon="teenyicons:ruby-outline" style="font-size: 24px; color: #003366;"> </span>
+              <p style="font-size: 15px;">Ruby</p>
+            </div>
+            <div class= "d-flex skill-icon" style="flex-direction: column; align-items: center;">
+              <span class="iconify" data-inline="false" data-icon="ant-design:html5-filled" style="font-size: 24px; color: #003366;"></span>
+              <p style="font-size: 15px;">HTML</p>
+            </div>
+            <div class= "d-flex skill-icon" style="flex-direction: column; align-items: center;">
+              <span class="iconify" data-inline="false" data-icon="bx:bxl-javascript" style="font-size: 24px; color: #003366;"></span>
+              <p style="font-size: 15px;">Javascript</p>
+            </div>
+            <div class= "d-flex skill-icon" style="flex-direction: column; align-items: center;">
+              <span class="iconify" data-inline="false" data-icon="cib:css3-shiled" style="font-size: 24px; color: #003366;"></span>
+              <p style="font-size: 15px;">CSS</p>
+            </div>
+            <div class= "d-flex skill-icon" style="flex-direction: column; align-items: center;">
+              <span class="iconify" data-inline="false" data-icon="cib:css3-shiled" style="font-size: 24px; color: #003366;"></span>
+              <p style="font-size: 15px;">Rails</p>
+            </div>
           </div>
-        <% elsif path.requirement == "intermediate"%>
-          <div class="d-flex align-items-center" style="margin-left: 20px; margin-top: 15px; ">
-            <i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle mr-3"></i>
-            <p><%= path.requirement %></p>
+        <% elsif language == "python"%>
+          <div class="d-flex">
+            <div class= "d-flex skill-icon" style="flex-direction: column; align-items: center;">
+              <span class="iconify" data-inline="false" data-icon="bx:bxl-python" style="font-size: 24px; color: #003366;"></span>
+              <p style="font-size: 15px;">Python</p>
+            </div>
           </div>
         <% else %>
-          <div class="d-flex align-items-center" style="align-self: flex-end; width: 100%; margin-left: 20px; margin-top: 15px;">
-            <i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle mr-3"></i>
-            <p><%= path.requirement %></p>
+          <div class="d-flex">
+            <div class= "d-flex skill-icon" style="flex-direction: column; align-items: center;">
+              <span class="iconify" data-inline="false" data-icon="cib:swift" style="font-size: 24px; color: #003366;"></span>
+              <p style="font-size: 15px;">Swift</p>
+            </div>
           </div>
         <% end %>
       </div>
-
-      <!-- Skills -->
-      <div class="d-flex">
-        <div class= "d-flex skill-icon" style="flex-direction: column; align-items: center;">
-          <% if path.language == "ruby javascript html css rails" %>
-            <div class="d-flex">
-              <div class= "d-flex skill-icon" style="flex-direction: column; align-items: center;">
-                <span class="iconify" data-inline="false" data-icon="teenyicons:ruby-outline" style="font-size: 24px; color: #003366;"> </span>
-                <p style="font-size: 15px;">Ruby</p>
-              </div>
-              <div class= "d-flex skill-icon" style="flex-direction: column; align-items: center;">
-                <span class="iconify" data-inline="false" data-icon="ant-design:html5-filled" style="font-size: 24px; color: #003366;"></span>
-                <p style="font-size: 15px;">HTML</p>
-              </div>
-              <div class= "d-flex skill-icon" style="flex-direction: column; align-items: center;">
-                <span class="iconify" data-inline="false" data-icon="bx:bxl-javascript" style="font-size: 24px; color: #003366;"></span>
-                <p style="font-size: 15px;">Javascript</p>
-              </div>
-              <div class= "d-flex skill-icon" style="flex-direction: column; align-items: center;">
-                <span class="iconify" data-inline="false" data-icon="cib:css3-shiled" style="font-size: 24px; #003366;"></span>
-                <p style="font-size: 15px;">CSS</p>
-              </div>
-              <div class= "d-flex skill-icon" style="flex-direction: column; align-items: center;">
-                <span class="iconify" data-inline="false" data-icon="cib:css3-shiled" style="font-size: 24px; color: #003366;"></span>
-                <p style="font-size: 15px;">Rails</p>
-              </div>
-            </div>
-          <% elsif path.language == "python"%>
-            <div class="d-flex">
-              <div class= "d-flex skill-icon" style="flex-direction: column; align-items: center;">
-                <span class="iconify" data-inline="false" data-icon="bx:bxl-python" style="font-size: 24px; color: #003366;"></span>
-                <p style="font-size: 15px;">Python</p>
-              </div>
-            </div>
-          <% else %>
-            <div class="d-flex">
-              <div class= "d-flex skill-icon" style="flex-direction: column; align-items: center;">
-                <span class="iconify" data-inline="false" data-icon="cib:swift" style="font-size: 24px; color: #003366;"></span>
-                <p style="font-size: 15px;">Swift</p>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      </div>
-      <!-- PATH DESCRIPTION -->
-      <div>
-        <p><strong>WHAT YOU FIND IN THIS PATH</strong></p>
-        <p> <%= path.description  %> </p>
-      </div>
-        <!-- Start button -->
-      <div class=" btn-card-big d-flex text-left">
-        <%= link_to "START", path_path(Path.name, @steps, @user) %>
-      </div>
     </div>
-  </div>
-<% end %>
+  </p>
+
+
 

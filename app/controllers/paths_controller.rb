@@ -4,6 +4,7 @@ class PathsController < ApplicationController
   end
 
   def show
+
     @path = Path.find_by_id(params[:id])
     authorize @path
     @steps = @path.steps

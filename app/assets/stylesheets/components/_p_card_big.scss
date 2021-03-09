@@ -1,52 +1,9 @@
-.path-card-expanded {
-  width: 525px;
-  height: 900px;
-  border: 2px solid $text-color;
-  border-radius: 0px 0px 10px;
-  background-color: $cb-white;
-  //display: none;
-   i {
-    color: $text-color;
-  }
-  overflow: hidden;
-  z-index: 100;
-  display: none;
-}
-
-.path-card-expanded a:hover {
-   transition: visibility 0s, opacity 0.5s linear;
-}
-
-
-.path-card-color {
-  i {
-    color: $reward;
-  }
-}
 
 .skill-icon {
-  padding-top: 22px;
+  padding-top: 7px;
   padding-right: 30px;
+  margin-bottom: -2px;
 }
-
-
-// .path-card-fsdev {
-
-// }
-
-
-// .path-card-mldev {
-
-// }
-
-
-// .path-card-dan {
-
-// }
-
-// .path-card-ios {
-
-// }
 
 
 

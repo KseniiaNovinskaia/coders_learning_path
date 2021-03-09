@@ -23,7 +23,7 @@ p "Created the USER '#{u.name}', email: '#{u.email}', password: '123456'"
         )
   p "Created the PATH #{p.name}!"
   Path.create!(
-    name: 'Machine Learning',
+    name: 'ML Developer',
     description: 'Machine Learning is an increasingly hot field of data science dedicated to enabling computers to learn from data. From spam filtering in social networks to computer vision for self-driving cars, the potential applications of Machine Learning are vast.',
     requirement: 'intermediate',
     language: 'python'
