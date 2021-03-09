@@ -38,8 +38,7 @@
         </div>
       </div>
                 <!-- Start button -->
-      <div class=" btn-card-big d-flex text-left">
-      <%= link_to "START", path_path(Path.find_by(name: 'iOS Developer'), @steps, @user)%>
-      </div>
+      <%= button_to "START", "/paths/1/step_progresses", class: "btn-card-big d-flex text-left" %>
+          <form method="post" action="step_progresses/create"></form>
     </div>
 </div>
