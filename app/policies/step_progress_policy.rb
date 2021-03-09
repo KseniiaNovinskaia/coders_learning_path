@@ -10,4 +10,5 @@ class StepProgressPolicy < ApplicationPolicy
   def update?
     true
   end
+
 end
