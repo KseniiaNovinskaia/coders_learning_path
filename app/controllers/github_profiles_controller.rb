@@ -15,6 +15,9 @@ require 'open-uri'
     # save the relevant data in the database
     @github_profile.public_repos = user['public_repos']
     @github_profile.public_gists = user['public_gists']
+    @github_profile.followers = user['followers']
+    @github_profile.following = user['following']
+    @github_profile.joined_github = user['created_at'].match(/\d{4}-\d{2}-\d{2}/)
     # @github_profile.overall_score = user['ranks']['overall']['score']
     # @github_profile.code_challenges_authored = user['codeChallenges']['totalAuthored']
     # @github_profile.code_challenges_completed = user['codeChallenges']['totalCompleted']

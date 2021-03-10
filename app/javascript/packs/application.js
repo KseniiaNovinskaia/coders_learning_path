@@ -34,7 +34,6 @@ import "bootstrap";
 import { initStepCardEventListener } from '../custom/step_card_toggle_expanded';
 import { initBigCardEventListener } from '../custom/big_card_event';
 import { initChatroomCable } from '../channels/chatroom_channel';
-import { testingProfiles } from '../custom/add_external_profiles';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -42,5 +41,4 @@ document.addEventListener('turbolinks:load', () => {
   initStepCardEventListener();
   initBigCardEventListener();
   initChatroomCable();
-  testingProfiles();
 });

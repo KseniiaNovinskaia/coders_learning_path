@@ -1,3 +1,14 @@
+
+
+
+
+
+
+// This was an idea that did not work. That's why it's not imported into
+// application.js
+
+
+
 const testingProfiles = () => {
 const externalProfilesButton = document.querySelector("#external-profiles");
 
@@ -16,4 +27,4 @@ externalProfilesButton.addEventListener("click", (event) => {
 
 };
 
-export { testingProfiles };
+// export { testingProfiles };
