@@ -5,7 +5,6 @@
       <%= image_tag "http://res.cloudinary.com/dqopwdgta/image/upload/c_scale,h_65,w_65/v1/Home/profile-avatar_gdki3u.png", class: "avatar-profile" %>
       <h1 class="mt-30"><%= @user.name %></h1>
       <p class="mt-30"><%= @user.created_at.strftime("Joined on %d/%m/%Y")%> </p>
-      <%# link_to "Add external profile", edit_profile_path, :class => "btn-edit-profile" %>
     </div>
     <div class="col-7" style="margin-bottom: 32px;">
       <h2 style="margin-bottom: 20px;">YOUR PATHS</h2>
@@ -44,18 +43,19 @@
           </div>
         </div>
       </div>
-      <h2 style="margin-top: 46px; margin-bottom: 20px;">EXTERNAL PROFILES</h2>
-      <%= simple_form_for (@codewars_profile) do |f| %>
-        <%= f.input :user_name, label: 'Codewars username' %>
-        <%= f.submit %>
+      <% if current_user.codewars_profile.nil? %>
+        <h2 style="margin-top: 46px; margin-bottom: 20px;">Please add your <span style="background-color: #A9DCDB">Codewars</span> username</h2>
+        <%= simple_form_for (@codewars_profile) do |f| %>
+          <%= f.input :user_name, label: false, input_html: { class: 'profile-input' } %>
+          <%= f.submit 'Add Codewars profile', class: 'btn-edit-profile' %>
+        <% end %>
+      <% else %>
+        <h2 style="margin-top: 46px; margin-bottom: 20px;">Please add your <span style="background-color: #A9DCDB">GitHub</span> username</h2>
+        <%= simple_form_for (@github_profile) do |f| %>
+          <%= f.input :user_name, label: false %>
+          <%= f.submit 'Add GitHub profile', class: 'btn-edit-profile' %>
+        <% end %>
       <% end %>
-      <br>
-      <%= simple_form_for (@github_profile) do |f| %>
-        <%= f.input :user_name, label: 'GitHub username' %>
-        <%= f.submit %>
-      <% end %>
-
-      <%= form_tag %>
     </div>
   </div>
   <div class="col-1"></div>
