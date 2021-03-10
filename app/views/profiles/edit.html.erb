@@ -2,22 +2,34 @@
   <div class="row mt-70">
     <div class="col-1"></div>
     <div class="col-3">
-      <%= image_tag "http://res.cloudinary.com/dqopwdgta/image/upload/c_scale,h_65,w_65/v1/Home/profile-avatar_gdki3u.png", class: "avatar-profile" %>
+      <%= link_to edit_user_registration_path(@user), class: 'edit-avatar-link' do  %>
+        <% if @user.avatar.attached? %>
+          <%= cl_image_tag @user.avatar.key, alt: "user avatar", class: "avatar-profile" %>
+        <% else %>
+          <%= image_tag "http://res.cloudinary.com/dqopwdgta/image/upload/c_scale,h_65,w_65/v1/Home/profile-avatar_gdki3u.png", class: "avatar-profile" %>
+        <% end %>
+      <% end %>
       <h1 class="mt-30"><%= @user.name %></h1>
       <p class="mt-30"><%= @user.created_at.strftime("Joined on %d/%m/%Y")%> </p>
-      <%# link_to "Add external profile", edit_profile_path, :class => "btn-edit-profile" %>
+      <%# link_to "Add external profiles", edit_profile_path, :class => "btn-edit-profile" %>
     </div>
     <div class="col-7" style="margin-bottom: 32px;">
       <h2 style="margin-bottom: 20px;">YOUR PATHS</h2>
-      <!-- IF I WAS ABLE TO DO @USER.PATHS.EACH I WOULD BE BETTER ADVISED
-      TO INSERT A GRID HERE, THAT FILLS ACCORDING TO THE NUMBER OF PATHS, ALSO
-      ADDING NEW ROWS AS THEY FILL -->
+      <!-- Note to self by KH: If I was able to do @user.paths.each I would
+      probably insert a grid here, that fills according to the number
+      of paths, also adding new rows as a row fills. -->
+
+<!-- THE NAMES OF THE COURSES AND THE DECISION WHICH ONE IS COMPLETED AND WHICH
+ONE IS NOT (AND WHAT THE PERCENTAGE IS OF THE ONE THAT IS NOT) WILL DEPEND ON
+KSENIIA'S DECISIONS IN THE SEEDS. IT WILL BE EASY TO ADAPT THAT, SO THE DESIGN
+OF THE CARDS CAN HAPPEN BEFORE THAT DECISION. -->
+
       <div class="d-flex justify-content-between">
         <div class="w-third mr-60 profile-card">
           <div class="profile-card-content">
             <h6>Full Stack Developer</h6>
             <span class="iconify profile-cup completed-yellow" data-icon="si-glyph:champion-cup" data-inline="false"></span>
-            <p><i class="fas fa-check-circle step-card-completed-icon ml-32"></i> Completed</p>
+            <p><i class="fas fa-check-circle step-card-completed-icon"></i> Completed</p>
           </div>
           <div class="profile-card-see-btn">
             <h6>See</h6>
@@ -25,9 +37,14 @@
         </div>
         <div class="w-third mr-60 profile-card">
           <div class="profile-card-content">
+<!-- THE CUP BECOMES YELLOW BY ADDING THE completed-yellow CLASS TO IT -->
             <h6>Mobile Developer</h6>
-            <span class="iconify profile-cup completed-yellow" data-icon="si-glyph:champion-cup" data-inline="false"></span>
-            <p><i class="fas fa-check-circle step-card-completed-icon ml-32"></i> Completed</p>
+            <div class="profile-trophy-percentage">
+            <span class="iconify profile-cup" data-icon="si-glyph:champion-cup" data-inline="false"></span>
+            <h5>15%</h5>
+            </div>
+            <!-- <p><i class="fas fa-check-circle step-card-completed-icon ml-32"></i> Completed</p> -->
+            <p><i class="fas fa-circle step-card-todo-icon"></i> TO DO</p>
           </div>
           <div class="profile-card-see-btn">
             <h6>See</h6>
@@ -44,10 +61,18 @@
           </div>
         </div>
       </div>
-      <h2 style="margin-top: 46px; margin-bottom: 20px;">EXTERNAL PROFILES</h2>
-      <%= simple_form_for (@codewars_profile) do |f| %>
-        <%= f.input :user_name %>
-        <%= f.submit %>
+      <% if current_user.codewars_profile.nil? %>
+        <h2 style="margin-top: 46px; margin-bottom: 20px;">Please add your <span style="background-color: #A9DCDB">Codewars</span> username</h2>
+        <%= simple_form_for (@codewars_profile) do |f| %>
+          <%= f.input :user_name, label: false, input_html: { class: 'profile-input' } %>
+          <%= f.submit 'Add Codewars profile', class: 'btn-edit-profile' %>
+        <% end %>
+      <% else %>
+        <h2 style="margin-top: 46px; margin-bottom: 20px;">Please add your <span style="background-color: #A9DCDB">GitHub</span> username</h2>
+        <%= simple_form_for (@github_profile) do |f| %>
+          <%= f.input :user_name, label: false %>
+          <%= f.submit 'Add GitHub profile', class: 'btn-edit-profile' %>
+        <% end %>
       <% end %>
     </div>
   </div>

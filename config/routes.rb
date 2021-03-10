@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   patch '/profiles/:user_name', to: 'profiles#update'
 
   resources :codewars_profiles, only: [ :create ]
+  resources :github_profiles, only: [ :create ]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

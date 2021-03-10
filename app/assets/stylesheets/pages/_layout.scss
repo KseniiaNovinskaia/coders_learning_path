@@ -71,6 +71,14 @@
   p {
     line-height: 18px;
   }
+  h5 {
+    font-size: 45px;
+  }
+}
+
+.profile-trophy-percentage {
+  display: flex;
+  align-items: center;
 }
 
 .profile-card-see-btn {
@@ -96,4 +104,9 @@
 
 .completed-yellow {
   color: #F3C72A;
+}
+
+// add external profiles (edit_profile page)
+.profile-input {
+  border: 2px solid $text-color;
 }
