@@ -65,27 +65,86 @@ OF THE CARDS CAN HAPPEN BEFORE THAT DECISION. -->
       <% if @user.codewars_profile %>
         <div class="d-flex justify-content-between">
           <div class="w-47 profile-card">
-            <div class="profile-card-content">
-              <h6>Codewars Profile</h6>
-                <p>Honor: <%= @user.codewars_profile.honor %></p>
-                <p>Overall Rank: <%= @user.codewars_profile.overall_rank_name %></p>
-                <p>Overall Score: <%= @user.codewars_profile.overall_score %></p>
-                <p>Code Challenges Authored: <%= @user.codewars_profile.code_challenges_authored %></p>
-                <p>Code Challenges Completed: <%= @user.codewars_profile.code_challenges_completed %></p>
-                <p><%= @user.codewars_profile.first_language_name.capitalize %>: <%= @user.codewars_profile.first_language_rank_name %>, score <%= @user.codewars_profile.first_language_score %></p>
-                <% if @user.codewars_profile.second_language_name != 'None chosen' %>
-                  <p><%= @user.codewars_profile.second_language_name.capitalize %>: <%= @user.codewars_profile.second_language_rank_name %>, score <%= @user.codewars_profile.second_language_score %></p>
-                <% end %>
+            <div class="profile-card-content codewars">
+              <div class="icon-profile">
+                <span class="iconify" data-inline="false" data-icon="cib:codewars" style="font-size: 60px; color: #F3C72A; padding-bottom: 15px;"></span>
+                <h6>Codewars Profile</h6>
+              </div>
+              <div class="profile-data d-flex" style="align-items: center;">
+                <div class="profile-section">
+                  <p>HONORS</p>
+                </div>
+                <div class="profile-score">
+                  <p><%= @user.codewars_profile.honor %></p>
+                </div>
+              </div>
+              <div class="profile-data d-flex">
+                <div class="profile-section">
+                  <p>OVERALL RANK</p>
+                </div>
+                <div class="profile-score">
+                  <p><%= @user.codewars_profile.overall_rank_name %></p>
+                </div>
+              </div>
+              <div class="profile-data d-flex" style="align-items: center;">
+                <div class="profile-section">
+                  <p>OVERALL SCORE</p>
+                </div>
+                <div class="profile-score">
+                  <p><%= @user.codewars_profile.overall_score %></p>
+                </div>
+              </div>
+              <div class="profile-data d-flex" style="align-items: center;">
+                <div class="profile-section">
+                  <p>CHALLENGES AUTHORED </p>
+                </div>
+                <div class="profile-score">
+                  <p><%= @user.codewars_profile.code_challenges_authored %></p>
+                </div>
+              </div>
+              <div class="profile-data d-flex" style="align-items: center;">
+                <div class="profile-section">
+                  <p>CHALLENGES COMPLETED </p>
+                </div>
+                <div class="profile-score">
+                  <p><%= @user.codewars_profile.code_challenges_completed %></p>
+                </div>
+              </div>
+              <div class="profile-data d-flex" style="align-items: center;">
+                <div class="profile-section">
+                  <p><%= @user.codewars_profile.first_language_name.upcase! %> </p>
+                </div>
+                <div class="profile-score">
+                  <p><%= @user.codewars_profile.first_language_rank_name %> | score <%= @user.codewars_profile.first_language_score %></p>
+                </div>
+              </div>
+              <% if @user.codewars_profile.second_language_name != 'None chosen' %>
+              <div class="profile-data d-flex" style="align-items: center;">
+                <div class="profile-section">
+                  <p><%= @user.codewars_profile.second_language_name.upcase! %> </p>
+                </div>
+                <div class="profile-score">
+                  <p><%= @user.codewars_profile.second_language_rank_name %> | score <%= @user.codewars_profile.second_language_score%></p>
+                </div>
+              </div>
+              <% end %>
             </div>
           </div>
+
           <div class="w-47 profile-card">
-            <div class="profile-card-content">
-              <h6>GitHub Profile</h6>
-                <p>Public Repos: <%= @user.github_profile.public_repos %> </p>
-                <p>Public Gists: <%= @user.github_profile.public_gists %> </p>
-                <p>Followers: <%= @user.github_profile.followers %> </p>
-                <p>Following: <%= @user.github_profile.following %> </p>
-                <p>Joined GitHub: <%= @user.github_profile.joined_github %> </p>
+            <div class="profile-card-content profile-card-github">
+              <span class="iconify" data-inline="false" data-icon="akar-icons:github-fill" style="font-size: 60px; color: #F3C72A; padding-bottom: 15px; margin-left: 95px"></span>
+              <h6 style="border-bottom: 1px solid #E5E5E5; padding-bottom: 15px; text-align: center;">GitHub Profile</h6>
+                <p class="profile-section" style="margin-top: 13px;"> PUBLIC REPOS</p>
+                <p class="profile-score"> <%= @user.github_profile.public_repos %> </p>
+                <p class="profile-section" style="margin-top: 13px;">PUBLIC GISTS</p>
+                <p class="profile-score"> <%= @user.github_profile.public_gists %> </p>
+                <p class="profile-section" style="margin-top: 13px;">FOLLOWERS</p>
+                <p class="profile-score"> <%= @user.github_profile.followers %> </p>
+                <p class="profile-section" style="margin-top: 13px;"> FOLLOWING </p>
+                <p class="profile-score">  <%= @user.github_profile.following %> </p>
+                <p class="profile-section" style="margin-top: 13px;">JOINED GITHUB</p>
+                <p class="profile-score">  <%= @user.github_profile.joined_github %> </p>
             </div>
           </div>
         </div>
