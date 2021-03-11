@@ -4,7 +4,7 @@
 
       <% if path.name == "Full Stack Developer" %>
         <% id = "full_stack_developer" %>
-      <% elsif path.name == "ML Developer " %>
+      <% elsif path.name == "Frontend Developer" %>
         <% id = "ml_developer" %>
       <% elsif path.name == "Data Analyst" %>
         <% id = "data_analyst" %>
@@ -24,7 +24,7 @@
             <div class="flex-grow-1 text-center pt-2">
               <% if path.name == "Full Stack Developer" %>
                   <%= cl_image_tag("Index/FULL_STACK_DEVELOPER_pmau6g.svg")%>
-                <% elsif path.name == "ML Developer" %>
+                <% elsif path.name == "Frontend Developer" %>
                  <%= cl_image_tag("Index/ML_developer_gidze2.svg")%>
                 <% elsif path.name == "Data Analyst" %>
                   <%= cl_image_tag("Index/DATA_ANALYST_ieyk54.svg")%>
@@ -57,9 +57,6 @@
             </div>
           </div>
         </div>
-
-
-
 <% end %>
 
 
