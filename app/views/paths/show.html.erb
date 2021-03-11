@@ -35,7 +35,7 @@
         first_step_completed: @step_data[@steps.first.id][:completion]
       } %>
      </div>
-     <div class="chatroom-container">
+     <div id="path_show_chatroom" class="chatroom-container invisible">
        <h5>#<%= @chatroom.name %></h5>
          <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
             <% @chatroom.messages.each do |message| %>
