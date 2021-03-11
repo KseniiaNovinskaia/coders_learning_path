@@ -1,18 +1,7 @@
 
 .banner {
   background-size: cover;
-  //ackground-color: #A9DCDB;
   background: #A9DCDB;
-    // linear-gradient(
-    //   to left,
-    //   // #CEECEB,
-    //   // #CEECEB,
-    //   // #CEECEB,
-    //   ,
-    //   #A9DCDB,
-    //   #A9DCDB,
-    //   #A9DCDB,
-    // );
   width: 100%;
   height: 490px;
   display: flex;
@@ -41,7 +30,7 @@
   vertical-align: middle;
   h1 {
     font-size: 40px;
-    color: $alert;
+    color: $text-color;
     font-family: Poppins;
     text-align: center;
     font-weight: bolder;
