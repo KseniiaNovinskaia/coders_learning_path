@@ -12,7 +12,7 @@
          <% id = 'full_stack_developer' %>
          <% path_name = 'Full Stack Developer' %>
          <% description = 'As a jack of all trades (and master of quite a few), a full-stack engineer can get a project done from start to finish. In this Path, you’ll begin with the front-end, move on to the back-end, then learn to connect the two. By the time you’re done, you’ll have the well-rounded skills needed to enter this in-demand job market.' %>
-         <% requirement = 'beginner' %>
+         <% requirement = 'intermediate' %>
          <% language = 'ruby javascript html css rails' %>
          <% duration_hours = path.duration_hours %>
          <% duration_minutes = path.duration_minutes %>
@@ -26,11 +26,11 @@
         <% steps = path.steps %>
         <% duration_hours = path.duration_hours %>
         <% duration_minutes = path.duration_minutes %>
-      <% elsif path.name == "ML Developer" %>
+      <% elsif path.name == "Frontend Developer" %>
         <% id = 'ml_developer' %>
-        <% path_name = 'ML Developer'  %>
+        <% path_name = 'Frontend Developer'  %>
         <% description = 'Machine Learning is an increasingly hot field of data science dedicated to enabling computers to learn from data. From spam filtering in social networks to computer vision for self-driving cars, the potential applications of Machine Learning are vast.' %>
-        <% requirement = 'intermediate' %>
+        <% requirement = 'beginner' %>
         <% language = 'python' %>
         <% steps = path.steps %>
         <% duration_hours = path.duration_hours %>
@@ -60,11 +60,22 @@
       <div class="modal-body">
         <%= render 'shared/big_card', id: id, path_name: path_name, description: description, requirement: requirement, language: language, duration_hours: path.duration_hours, duration_minutes: path.duration_minutes, steps: path.steps %>
       </div>
-      <div class="modal-footer d-flex" style="align-items: center;">
+   <div class="modal-footer d-flex" style="align-items: center;">
+  <% if path_name == "Full Stack Developer" %>
+    <%= button_to "START", path_step_progresses_path(Path.find_by_name("Full Stack Developer")), class: "btn-card-big-primary" %>
+      <form method="post" action="step_progresses/create"></form>
+  <% elsif path_name == "Frontend Developer" %>
+    <%= button_to "START", path_step_progresses_path(Path.find_by_name("Frontend Developer")), class: "btn-card-big-primary" %>
+      <form method="post" action="step_progresses/create"></form>
+  <% elsif path_name == "Data Analyst" %>
+    <%= button_to "START", path_step_progresses_path(Path.find_by_name("Data Analyst")), class: "btn-card-big-primary" %>
+      <form method="post" action="step_progresses/create"></form>
+  <% else %>
+    <%= button_to "START", path_step_progresses_path(Path.find_by_name("iOS Developer")), class: "btn-card-big-primary" %>
+      <form method="post" action="step_progresses/create"></form>
+  <% end %>
+    </div>
 
-        <%= button_to "START", path_step_progresses_path(Path.find_by_name("Full Stack Developer")), class: "btn-card-big-primary" %>
-          <form method="post" action="step_progresses/create"></form>
-      </div>
       </div>
     </div>
   </div>
@@ -76,7 +87,6 @@
 
           <div class="p_card_sm d-flex flex-column text-left">
             <div class="div-to-do pr-3">
-            <p> STILL TO DO</p>
           </div>
             <div style="margin-left: 20px; margin-top: 15px; ">
               <p>I want to become a</p>
@@ -87,7 +97,7 @@
             <div class="d-flex flex-grow-1 text-center pb-3" style="align-items: flex-end; justify-content: center;">
               <% if path.name == "Full Stack Developer" %>
                 <%= cl_image_tag("Index/FULL_STACK_DEVELOPER_pmau6g.svg")%>
-              <% elsif path.name == "ML Developer" %>
+              <% elsif path.name == "Frontend Developer" %>
                 <%= cl_image_tag("Index/ML_developer_gidze2.svg")%>
               <% elsif path.name == "Data Analyst" %>
                 <%= cl_image_tag("Index/DATA_ANALYST_ieyk54.svg")%>
