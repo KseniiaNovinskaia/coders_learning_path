@@ -65,8 +65,8 @@
   border-radius: 50px;
   width: 270px;
   height: 69px;
-  margin-top: 40px;
-  margin-left: 270px;
+  margin-top: 26px;
+  margin-left: 278px;
 }
 
 .card-start-learning .btn {
@@ -88,11 +88,11 @@
 }
 
 .btn-account {
-  color: #6C63FF;
+  color: $text-color;
   font-family: Roboto;
   padding-left: 40px;
   padding-top: 20px;
-  margin-left: 270px;
+  margin-left: 288px;
 }
 
 .btn-account:hover {
@@ -150,4 +150,11 @@
   margin-top: 60px;
   margin-bottom: 0;
   text-align: center;
+}
+
+.img-featuring {
+  margin-left: -191px;
+  margin-bottom: 80px;
+  margin-top: 40px;
+
 }
