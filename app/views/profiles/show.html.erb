@@ -72,7 +72,7 @@ OF THE CARDS CAN HAPPEN BEFORE THAT DECISION. -->
               </div>
               <div class="profile-data d-flex" style="align-items: center;">
                 <div class="profile-section">
-                  <p>HONORS</p>
+                  <p> <span class="iconify" data-inline="false" data-icon="si-glyph:champion-cup" style="font-size: 18px; color: #FE0760;"></span> HONORS</p>
                 </div>
                 <div class="profile-score">
                   <p><%= @user.codewars_profile.honor %></p>
@@ -80,7 +80,7 @@ OF THE CARDS CAN HAPPEN BEFORE THAT DECISION. -->
               </div>
               <div class="profile-data d-flex">
                 <div class="profile-section">
-                  <p>OVERALL RANK</p>
+                  <p><span class="iconify" data-inline="false" data-icon="si-glyph:champion-cup" style="font-size: 18px; color: #FE0760;"></span> OVERALL RANK</p>
                 </div>
                 <div class="profile-score">
                   <p><%= @user.codewars_profile.overall_rank_name %></p>
@@ -88,7 +88,7 @@ OF THE CARDS CAN HAPPEN BEFORE THAT DECISION. -->
               </div>
               <div class="profile-data d-flex" style="align-items: center;">
                 <div class="profile-section">
-                  <p>OVERALL SCORE</p>
+                  <p> <span class="iconify" data-inline="false" data-icon="si-glyph:champion-cup" style="font-size: 18px; color: #FE0760;"></span> OVERALL SCORE</p>
                 </div>
                 <div class="profile-score">
                   <p><%= @user.codewars_profile.overall_score %></p>
@@ -130,24 +130,52 @@ OF THE CARDS CAN HAPPEN BEFORE THAT DECISION. -->
               <% end %>
             </div>
           </div>
-
           <div class="w-47 profile-card">
             <div class="profile-card-content profile-card-github">
-              <span class="iconify" data-inline="false" data-icon="akar-icons:github-fill" style="font-size: 60px; color: #F3C72A; padding-bottom: 15px; margin-left: 95px"></span>
-              <h6 style="border-bottom: 1px solid #E5E5E5; padding-bottom: 15px; text-align: center;">GitHub Profile</h6>
-                <p class="profile-section" style="margin-top: 13px;"> PUBLIC REPOS</p>
-                <p class="profile-score"> <%= @user.github_profile.public_repos %> </p>
-                <p class="profile-section" style="margin-top: 13px;">PUBLIC GISTS</p>
-                <p class="profile-score"> <%= @user.github_profile.public_gists %> </p>
-                <p class="profile-section" style="margin-top: 13px;">FOLLOWERS</p>
-                <p class="profile-score"> <%= @user.github_profile.followers %> </p>
-                <p class="profile-section" style="margin-top: 13px;"> FOLLOWING </p>
-                <p class="profile-score">  <%= @user.github_profile.following %> </p>
-                <p class="profile-section" style="margin-top: 13px;">JOINED GITHUB</p>
-                <p class="profile-score">  <%= @user.github_profile.joined_github %> </p>
+              <span class="iconify" data-inline="false" data-icon="akar-icons:github-fill" style="font-size: 60px; color: #F3C72A; padding-bottom: 15px;"></span>
+              <h6 style="padding-bottom: 15px;">GitHub Profile</h6>
+              <div class="profile-data d-flex" style="align-items: center;">
+                <div class="profile-section">
+                  <p> <span class="iconify" data-inline="false" data-icon="si-glyph:champion-cup" style="font-size: 18px; color: #FE0760;"></span> PUBLIC REPOS</p>
+                </div>
+                <div class="profile-score">
+                  <p><%= @user.github_profile.public_repos %></p>
+                </div>
+              </div>
+              <div class="profile-data d-flex" style="align-items: center;">
+                <div class="profile-section">
+                  <p> <span class="iconify" data-inline="false" data-icon="si-glyph:champion-cup" style="font-size: 18px; color: #FE0760;"></span> PUBLIC GISTS</p>
+                </div>
+                <div class="profile-score">
+                  <p><%= @user.github_profile.public_gists %></p>
+                </div>
+              </div>
+              <div class="profile-data d-flex" style="align-items: center;">
+                <div class="profile-section">
+                  <p>  FOLLOWERS</p>
+                </div>
+                <div class="profile-score">
+                  <p><%= @user.github_profile.followers %></p>
+                </div>
+              </div>
+              <div class="profile-data d-flex" style="align-items: center;">
+                <div class="profile-section">
+                  <p> FOLLOWING</p>
+                </div>
+                <div class="profile-score">
+                  <p><%= @user.github_profile.following %> </p>
+                </div>
+              </div>
+              <div class="profile-data d-flex" style="align-items: center;">
+                <div class="profile-section">
+                  <p> JOINED GITHUB</p>
+                </div>
+                <div class="profile-score">
+                  <p><%= @user.github_profile.joined_github %>  </p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
       <% else %>
         <%= link_to "Add external profiles", edit_profile_path, :class => "btn-edit-profile" %>
       <% end %>
