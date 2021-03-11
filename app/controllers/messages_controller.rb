@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
   def create
+    @path = Path.find(params[:path_id])
     @chatroom = Chatroom.find(params[:chatroom_id])
     @message = Message.new(message_params)
     @message.chatroom = @chatroom
@@ -11,7 +12,6 @@ class MessagesController < ApplicationController
         render_to_string(partial: "message", locals: { message: @message })
       )
 
-      @path = Path.find(params[:path_id])
       redirect_to path_path(@path, anchor: "message-#{@message.id}")
     else
       render 'path/show'

@@ -1,0 +1,121 @@
+//edit user
+.edit-user-container {
+  width: 25%;
+  margin: 2em auto;
+}
+
+//profiles
+.mt-70 {
+  margin-top: 70px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.w-third {
+  width: 33.33333%;
+}
+
+.w-47 {
+  width: 47%;
+}
+
+.mr-60 {
+  margin-right: 60px;
+}
+
+.profile-card {
+  box-sizing: border-box;
+  border-radius: 0px 0px 20px 0px;
+  border: 2px solid $text-color;
+  position: relative;
+  background-color: $cb-white;
+  height: 380px;
+}
+
+.profile-card-content {
+  margin: 24px 32px;
+  p {
+    line-height: 24px;
+  }
+  h5 {
+    font-size: 45px;
+  }
+}
+
+.profile-trophy-percentage {
+  display: flex;
+  align-items: center;
+}
+
+.profile-card-see-btn {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  background-color: $text-color;
+  box-sizing: border-box;
+  padding: 10px 20px 10px 20px;
+  border-radius: 0px 0px 20px 0px;
+  h6 {
+    color: $cb-white;
+  }
+}
+
+.profile-cup {
+  font-size: 108px;
+  // margin-top: 34px;
+  // margin-bottom: 33px;
+  color: #E6E6E6;
+  // flex-basis: auto;
+}
+
+.completed-yellow {
+  color: #F3C72A;
+}
+
+// add external profiles (edit_profile page)
+.profile-input {
+  border: 2px solid $text-color;
+}
+
+
+.profile-section {
+  width: 200px;
+  font-weight: bolder;
+  color: #A1AAFC;
+  padding: 0px;
+  p {
+    color: #A1AAFC;
+    font-family: Poppins;
+    font-weight: bolder;
+    font-size: 14px;
+    padding-bottom: 14px;
+    padding-top: 0px;
+  }
+}
+
+.profile-score {
+  text-align: center;
+  margin-top: 0px;
+  padding-bottom: 12px;
+  padding-top: 0px;
+  p {
+    font-size: 14px;
+  }
+}
+
+.profile-card.codewars {
+  height: 400px;
+}
+
+.profile-card.github {
+  height: 577px;
+}
+ .profile-data {
+  border-top:1px solid #E5E5E5;
+  display: flex;
+  margin-bottom: -22px;
+  align-items: center;
+ }
+
