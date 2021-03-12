@@ -25,6 +25,31 @@
   font-weight: bold;
 }
 
+.btn-card-big-primary-1 {
+  width: 480px;
+  background-color: $text-color;
+  height: 60px;
+  left: 0px;
+  top: 0px;
+  padding: 0px 42px;
+  padding-bottom: 14px !important;
+  color: $cb-white;
+  margin-bottom: 0 !important;
+  font-family: Poppins;
+  font-size: 40px;
+  font-weight: bold;
+  border: none;
+}
+
+.btn-card-big-primary-1:hover {
+   opacity: 1;
+  font-size: 40px;
+  //transform: scale(1.1);
+  background-color: $alert;
+  transition: background-color;
+  text-decoration: none !important;
+}
+
 .btn-card-big-primary:hover{
   opacity: 1;
   font-size: 40px;
