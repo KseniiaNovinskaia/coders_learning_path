@@ -1,10 +1,14 @@
 .invisible {
   display: none;
-
 }
 
-.visible {
-  display: inline;
+.chatroom-container {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90%;
+  padding: 1rem;
 }
 
 .chatroom {
@@ -23,17 +27,51 @@
 }
 
 #messages {
+  border-radius: 12px;
+  background: rgba($text-color, 0.1);
+  width: 100%;
   padding: 0 1rem;
   padding-top: 1rem;
-  overflow: scroll;
-  max-height: calc(100vh - 66px - 65px - 71px);
+  overflow-y: hidden;
+  // max-height: calc(100vh - 66px - 65px - 71px);
+  max-height: 46vh;
+
+  &:hover {
+    overflow-y: auto;
+  }
 }
 
 #new_message {
-  padding: 1rem;
-  border-top: 1px solid $gray-200;
+  padding: 1rem 0;
+  // border-top: 2px solid $gray-200;
+
+  #message_content {
+    border: none;
+    background: transparent;
+    padding: 0;
+
+    &:focus {
+      border: none;
+      box-shadow: none;
+    }
+  }
 
   .form-group {
     margin-bottom: 0;
   }
+
+  .send-message {
+    border: none;
+    background-color: inherit;
+    box-shadow: none;
+    color: $text-color;
+    margin-left: 6px;
+  }
+}
+
+.message-input-and-submit-container {
+  display: flex;
+  border-radius: 50px;
+  border: 2px solid $text-color;
+  padding: 0 0.8rem;
 }

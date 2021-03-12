@@ -28,26 +28,30 @@
     </div>
 
     <div class="container-right">
-      <div>
       <%= render 'shared/learning_group_box',
       locals: {
         first_step_completed: @step_data[@steps.first.id][:completion]
       } %>
-     </div>
-     <div id="path_show_chatroom" class="chatroom-container invisible">
-       <h5>#<%= @chatroom.name %></h5>
+     <div id="path_show_chatroom" class="chatroom-container visible">
+       <h4>#<%= @chatroom.name %></h4>
          <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-            <% @chatroom.messages.each do |message| %>
+            <% @chatroom.messages.reverse[0..2].each do |message| %>
             <%= render 'messages/message', message: message %>
             <% end %>
           </div>
 
         <%= simple_form_for [ @path, @chatroom, @message ], remote: true do |f| %>
-        <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-        <%= f.submit "send message" %>
+          <div class="message-input-and-submit-container">
+            <%= f.input :content, label: false, placeholder: "ask a question" %>
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            <%= button_tag type: 'submit', class: "send-message" do %>
+              <i class="fas fa-paper-plane"></i>
+            <% end %>
+          </div>
         <% end %>
      </div>
     </div>
   </div>
 </div>
+</div>
+

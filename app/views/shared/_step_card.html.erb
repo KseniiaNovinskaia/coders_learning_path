@@ -25,11 +25,6 @@
       <% end %>
     </div>
 
-<!--     <div class="step-card-external-source-icon-container">
-      <%# source = locals[:step].external_source_icon %>
-      <%#= image_tag source[:path_to_source_icon], alt: source[:source_icon_alt], class: 'step-card-external-source-icon' %>
-    </div> -->
-
     <div class="step-card-expand-icon <%= 'step-card-expand-icon-completed' if locals[:completed] %>">
       <i class="fas fa-angle-down"></i>
     </div>
@@ -52,18 +47,18 @@
 
     <div class="btn-accordion-container">
       <div>
-            <%= render 'shared/btn_accordion',
-      locals: {
-        completed: locals[:completed],
-        url: locals[:step].url
-      } %>
+        <%= render 'shared/btn_accordion',
+          locals: {
+            completed: locals[:completed],
+            url: locals[:step].url
+          }
+        %>
       </div>
+
       <div style="margin-top: 20px;">
         <%#= link_to "Done", step_progress_path(locals[:step_progress_id]), method: :patch, class: 'btn-accordion btn-accordion-text' %>
         <%#= link_to "Click Here", page_path, :id => 'login', "data-toggle" => "modal", 'data-target' => '#loginModal' %>
         <%= link_to "Done", step_progress_path(locals[:step_progress_id]), method: :patch, class: 'btn-accordion btn-accordion-text' %>
-
-
         <!-- Here I remove the mathod: :patch and just trigger the modal data toggle -->
       </div>
     </div>
