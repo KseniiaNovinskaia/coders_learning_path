@@ -1,13 +1,13 @@
 <div class="navbar-container">
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="nav-left">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
     <%# INCLUDE THE ICO THING HERE %>
       <%# image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="font-size: 35px; color: rgb(0, 51, 102); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256" class="iconify logo" data-inline="false" data-icon="ph:path-bold"><path d="M200 164a36.057 36.057 0 0 0-33.936 24H72a28 28 0 0 1 0-56h96a44 44 0 0 0 0-88H72a12 12 0 0 0 0 24h96a20 20 0 0 1 0 40H72a52 52 0 0 0 0 104h94.064A35.998 35.998 0 1 0 200 164zm0 48a12 12 0 1 1 12-12a12.013 12.013 0 0 1-12 12z" fill="currentColor"></path></svg>
       <!-- <span class="iconify logo" data-inline="false" data-icon="ph:path-bold" style="font-size: 35px; color: #003366;"></span> -->
     <% end %>
-    <%= link_to "ALL PATHS", paths_path, class: "navbar-h3"  %>
+    <%#= link_to "ALL PATHS", paths_path, class: "navbar-h3"  %>
   </div>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,6 +39,7 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%# INSERT LINK TO USER PROFILE HERE%>
             <%= link_to "Profile", "/profiles/#{current_user.name}", class: "dropdown-item" %>
+            <%= link_to "All Paths", paths_path, class: "dropdown-item"  %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
