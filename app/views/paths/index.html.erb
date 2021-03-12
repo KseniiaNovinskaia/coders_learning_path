@@ -60,21 +60,21 @@
       <div class="modal-body">
         <%= render 'shared/big_card', id: id, path_name: path_name, description: description, requirement: requirement, language: language, duration_hours: path.duration_hours, duration_minutes: path.duration_minutes, steps: path.steps %>
       </div>
-   <div class="modal-footer d-flex" style="align-items: center;">
-    <% if path_name == "Full Stack Developer" %>
-      <%= button_to "START", path_step_progresses_path(Path.find_by_name("Full Stack Developer")), class: "btn-card-big-primary" %>
-        <form method="post" action="step_progresses/create"></form>
-    <% elsif path_name == "Frontend Developer" %>
-      <%= button_to "START", path_step_progresses_path(Path.find_by_name("Frontend Developer")), class: "btn-card-big-primary" %>
-        <form method="post" action="step_progresses/create"></form>
-    <% elsif path_name == "Data Analyst" %>
-      <%= button_to "START", path_step_progresses_path(Path.find_by_name("Data Analyst")), class: "btn-card-big-primary" %>
-        <form method="post" action="step_progresses/create"></form>
-    <% else %>
-      <%= button_to "START", path_step_progresses_path(Path.find_by_name("iOS Developer")), class: "btn-card-big-primary" %>
-        <form method="post" action="step_progresses/create"></form>
-    <% end %>
-   </div>
+       <div class="modal-footer d-flex" style="align-items: center;">
+        <% if path_name == "Full Stack Developer" %>
+          <%= button_to "START", path_step_progresses_path(Path.find_by_name("Full Stack Developer")), class: "btn-card-big-primary" %>
+            <form method="post" action="step_progresses/create"></form>
+        <% elsif path_name == "Frontend Developer" %>
+          <%= button_to "START", path_step_progresses_path(Path.find_by_name("Frontend Developer")), class: "btn-card-big-primary" %>
+            <form method="post" action="step_progresses/create"></form>
+        <% elsif path_name == "Data Analyst" %>
+          <%= button_to "START", path_step_progresses_path(Path.find_by_name("Data Analyst")), class: "btn-card-big-primary" %>
+            <form method="post" action="step_progresses/create"></form>
+        <% else %>
+          <%= button_to "START", path_step_progresses_path(Path.find_by_name("iOS Developer")), class: "btn-card-big-primary" %>
+            <form method="post" action="step_progresses/create"></form>
+        <% end %>
+       </div>
       </div>
     </div>
   </div>

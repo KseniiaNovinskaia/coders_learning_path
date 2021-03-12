@@ -1,12 +1,12 @@
 <div class="navbar-container">
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="nav-left">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
     <%# INCLUDE THE ICO THING HERE %>
       <%# image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
       <span class="iconify logo" data-inline="false" data-icon="ph:path-bold" style="font-size: 35px; color: #003366;"></span>
     <% end %>
-    <%= link_to "ALL PATHS", paths_path, class: "navbar-h3"  %>
+    <%#= link_to "ALL PATHS", paths_path, class: "navbar-h3"  %>
   </div>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +38,7 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%# INSERT LINK TO USER PROFILE HERE%>
             <%= link_to "Profile", "/profiles/#{current_user.name}", class: "dropdown-item" %>
+            <%= link_to "All Paths", paths_path, class: "dropdown-item"  %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

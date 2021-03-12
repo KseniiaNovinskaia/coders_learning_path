@@ -1,7 +1,7 @@
-  <div id="toggle-chat-button" class="learning-group-box-container<%= "-hover-enabled" if locals[:first_step_completed] %>" >
-    <% if locals[:first_step_completed] %>
+<!--   <div id="toggle-chat-button" class="learning-group-box-container<%#= "-hover-enabled" if locals[:first_step_completed] %>" >
+    <%# if locals[:first_step_completed] %>
       <div class="learning-group-box-container-unlocked">
-        <%= link_to path_path(@path), class: 'join-learning-group-link-wrapper' do %>
+        <%#= link_to path_path(@path), class: 'join-learning-group-link-wrapper' do %>
           <div class="learning-group-box-text-container learning-group-box-border">
             <h5 class="learninig-group-box-title">Let me help you out!</h5>
             <p><strong>Coding buddies</strong> are a great way to improve your learning experience and
@@ -13,11 +13,16 @@
           <div class="btn-learning-group-box-container">
             <p class="btn-card-sm text-center btn-learning-group-box">Ask for help</p>
           </div>
-        <% end %>
+        <%# end %>
       </div>
-    <% else %>
+    <%# else %>
       <div class="learning-group-box-container-locked">
         <p>Unlock Learning Groups by completing the first step of this path.</p>
       </div>
-    <% end %>
+    <%# end %>
+  </div> -->
+
+  <div id="toggle-chat-button">
+    <button id="btn-ask" class="invisible">Ask a Question <i class="far fa-comment-alt"></i></button>
+    <button id="btn-hide">Hide Chat</button>
   </div>
