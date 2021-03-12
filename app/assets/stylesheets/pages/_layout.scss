@@ -27,9 +27,11 @@
 .container-right {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   width: 420px;
   padding-top: 38px;
+  height: 80vh;
+  position: sticky;
+  top: 0;
+  right: 0;
 }
-
-
