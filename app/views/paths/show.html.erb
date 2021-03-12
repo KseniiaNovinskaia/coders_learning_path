@@ -23,7 +23,6 @@
               step_progress_id: @step_data[step.id][:step_progress_id],
               step_title: @step_data[step.id][:title]
             } %>
-            <%= render 'shared/step_card_modal', step_progress_id: @step_data[step.id][:step_progress_id], step_title: @step_data[step.id][:title] %>
           <% end %>
        </div>
     </div>
@@ -48,9 +47,7 @@
         <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
         <%= f.submit "send message" %>
         <% end %>
+     </div>
     </div>
   </div>
-
-
-
 </div>
