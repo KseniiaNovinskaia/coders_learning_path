@@ -58,7 +58,7 @@ OF THE CARDS CAN HAPPEN BEFORE THAT DECISION. -->
 <!-- These are divs for user's external profiles -->
 
       <h2 style="margin-top: 36px; margin-bottom: 46px;">YOUR EXTERNAL PROFILES</h2>
-      <% if @user.codewars_profile %>
+      <% if @user.codewars_profile && @user.github_profile %>
         <div class="d-flex justify-content-between">
           <div class="w-47 profile-card" style="background-color: #003366">
             <div class="profile-card">
