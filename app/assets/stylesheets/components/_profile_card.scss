@@ -25,13 +25,26 @@
   margin-right: 60px;
 }
 
-.profile-card {
+.profile-card-top {
   box-sizing: border-box;
-  border-radius: 0px 0px 20px 0px;
+  height: 100%;
   border: 2px solid $text-color;
   position: relative;
   background-color: $cb-white;
-  height: 380px;
+  box-shadow: 0 5px 10px rgba(0,0,0,.07), 0 2px 4px rgba(0,0,0,.06);
+  left: 7px;
+  bottom: 7px;
+}
+
+
+.profile-card {
+  box-sizing: border-box;
+  height: 75%;
+  border: 2px solid $text-color;
+  position: relative;
+  background-color: $cb-white;
+  left: 7px;
+  bottom: 7px;
 }
 
 .profile-card-content {
@@ -50,24 +63,27 @@
 }
 
 .profile-card-see-btn {
+  bottom: 0px;
+  color: $cb-white $text-color;
+  text-align: center;
   position: absolute;
+  width:75%;
+  margin: 0px;
+  padding: 0px;
+  height: 15%;
   bottom: -2px;
   right: -2px;
   background-color: $text-color;
   box-sizing: border-box;
-  padding: 10px 20px 10px 20px;
-  border-radius: 0px 0px 20px 0px;
-  h6 {
-    color: $cb-white;
-  }
+}
+
+.div-motivation {
+  background-color: $cb-white;
 }
 
 .profile-cup {
   font-size: 108px;
-  // margin-top: 34px;
-  // margin-bottom: 33px;
   color: #E6E6E6;
-  // flex-basis: auto;
 }
 
 .completed-yellow {
@@ -113,9 +129,9 @@
   height: 577px;
 }
  .profile-data {
-  border-top:1px solid #E5E5E5;
   display: flex;
   margin-bottom: -22px;
   align-items: center;
+
  }
 

@@ -24,130 +24,159 @@ ONE IS NOT (AND WHAT THE PERCENTAGE IS OF THE ONE THAT IS NOT) WILL DEPEND ON
 KSENIIA'S DECISIONS IN THE SEEDS. IT WILL BE EASY TO ADAPT THAT, SO THE DESIGN
 OF THE CARDS CAN HAPPEN BEFORE THAT DECISION. -->
 
-      <div class="d-flex justify-content-between">
-        <div class="w-third mr-60 profile-card">
+<!-- These are divs for user's paths achievements -->
+
+      <div class="d-flex justify-content-flex-start">
+        <div class="w-third mr-60 profile-card-top">
           <div class="profile-card-content">
-            <h6>Full Stack Developer</h6>
-            <span class="iconify profile-cup completed-yellow" data-icon="si-glyph:champion-cup" data-inline="false"></span>
-            <p><i class="fas fa-check-circle step-card-completed-icon"></i> Completed</p>
+            <h6>Frontend Developer Path</h6>
+            <span class="iconify profile-cup completed-yellow" data-icon="si-glyph:champion-cup" data-inline="false" style="font-size: 100px;"></span>
+            <p style="padding-top: 20px; padding-bottom: 30px;"><i class="fas fa-check-circle step-card-completed-icon"></i> Completed</p>
           </div>
-          <div class="profile-card-see-btn">
-            <h6>See</h6>
-          </div>
+            <div class="profile-card-see-btn pt-1">
+              <h6 style="color: #F3C72A;">Restart</h6>
+            </div>
         </div>
-        <div class="w-third mr-60 profile-card">
+
+        <div class="w-third mr-60 profile-card-top">
           <div class="profile-card-content">
 <!-- THE CUP BECOMES YELLOW BY ADDING THE completed-yellow CLASS TO IT -->
-            <h6>Mobile Developer</h6>
+            <h6>Full Stack Developer Path</h6>
             <div class="profile-trophy-percentage">
-            <span class="iconify profile-cup" data-icon="si-glyph:champion-cup" data-inline="false"></span>
-            <h5>15%</h5>
+            <span class="iconify profile-cup" data-icon="si-glyph:champion-cup" data-inline="false" style="font-size: 100px;"></span>
+            <h5>45%</h5>
+
             </div>
             <!-- <p><i class="fas fa-check-circle step-card-completed-icon ml-32"></i> Completed</p> -->
-            <p><i class="fas fa-circle step-card-todo-icon"></i> TO DO</p>
+            <p style="padding-top: 20px; padding-bottom: 30px;"><i class="fas fa-circle step-card-todo-icon"></i> TO DO</p>
           </div>
-          <div class="profile-card-see-btn">
-            <h6>See</h6>
-          </div>
-        </div>
-        <div class="w-third profile-card">
-          <div class="profile-card-content">
-            <h6>Games Developer</h6>
-            <span class="iconify profile-cup completed-yellow" data-icon="si-glyph:champion-cup" data-inline="false"></span>
-            <p><i class="fas fa-check-circle step-card-completed-icon ml-32"></i> Completed</p>
-          </div>
-          <div class="profile-card-see-btn">
-            <h6>See</h6>
+          <div class="profile-card-see-btn text-center pt-1">
+            <h6 style="color: #FE0760;">Keep working</h6>
           </div>
         </div>
       </div>
-      <h2 style="margin-top: 46px; margin-bottom: 20px;">EXTERNAL PROFILES</h2>
+
+<!-- These are divs for user's external profiles -->
+
+      <h2 style="margin-top: 36px; margin-bottom: 46px;">YOUR EXTERNAL PROFILES</h2>
       <% if @user.codewars_profile %>
         <div class="d-flex justify-content-between">
-          <div class="w-47 profile-card">
-            <div class="profile-card-content codewars">
-              <div class="icon-profile">
-                <span class="iconify" data-inline="false" data-icon="cib:codewars" style="font-size: 60px; color: #F3C72A; padding-bottom: 15px;"></span>
-                <h6>Codewars Profile</h6>
+          <div class="w-47 profile-card" style="background-color: #003366">
+            <div class="profile-card">
+              <div class="profile-card-content codewars">
+                <div class="icon-profile">
+                  <span class="iconify" data-inline="false" data-icon="cib:codewars" style="font-size: 60px; color: #FE0760; padding-bottom: 15px;"></span>
+                  <h6 style="padding-bottom: 14px; padding-left: -20px;">Codewars Profile</h6>
+                </div>
+                <div class="profile-data d-flex" style="align-items: center;">
+                  <div class="profile-section">
+                    <p> <span class="iconify" data-inline="false" data-icon="si-glyph:champion-cup" style="font-size: 18px; color: #FE0760;"></span> HONORS</p>
+                  </div>
+                  <div class="profile-score">
+                    <p><%= @user.codewars_profile.honor %></p>
+                  </div>
+                </div>
+                <div class="profile-data d-flex">
+                  <div class="profile-section">
+                    <p><span class="iconify" data-inline="false" data-icon="si-glyph:champion-cup" style="font-size: 18px; color: #FE0760;"></span> OVERALL RANK</p>
+                  </div>
+                  <div class="profile-score">
+                    <p><%= @user.codewars_profile.overall_rank_name %></p>
+                  </div>
+                </div>
+                <div class="profile-data d-flex" style="align-items: center;">
+                  <div class="profile-section">
+                    <p> <span class="iconify" data-inline="false" data-icon="si-glyph:champion-cup" style="font-size: 18px; color: #FE0760;"></span> OVERALL SCORE</p>
+                  </div>
+                  <div class="profile-score">
+                    <p><%= @user.codewars_profile.overall_score %></p>
+                  </div>
+                </div>
+                <div class="profile-data d-flex" style="align-items: center;">
+                  <div class="profile-section">
+                    <p>CHALLENGES AUTHORED </p>
+                  </div>
+                  <div class="profile-score">
+                    <p><%= @user.codewars_profile.code_challenges_authored %></p>
+                  </div>
+                </div>
+                <div class="profile-data d-flex" style="align-items: center;">
+                  <div class="profile-section">
+                    <p>CHALLENGES COMPLETED </p>
+                  </div>
+                  <div class="profile-score">
+                    <p><%= @user.codewars_profile.code_challenges_completed %></p>
+                  </div>
+                </div>
+                <div class="profile-data d-flex" style="align-items: center;">
+                  <div class="profile-section">
+                    <p><%= @user.codewars_profile.first_language_name.upcase! %> </p>
+                  </div>
+                  <div class="profile-score">
+                    <p><%= @user.codewars_profile.first_language_rank_name %> [<%= @user.codewars_profile.first_language_score %>]</p>
+                  </div>
+                </div>
+                <% if @user.codewars_profile.second_language_name != 'None chosen' %>
+                <div class="profile-data d-flex" style="align-items: center;">
+                  <div class="profile-section">
+                    <p><%= @user.codewars_profile.second_language_name.upcase! %> </p>
+                  </div>
+                  <div class="profile-score">
+                    <p><%= @user.codewars_profile.second_language_rank_name %> [<%= @user.codewars_profile.second_language_score%>]</p>
+                  </div>
+                </div>
+                <% end %>
               </div>
-              <div class="profile-data d-flex" style="align-items: center;">
-                <div class="profile-section">
-                  <p>HONORS</p>
-                </div>
-                <div class="profile-score">
-                  <p><%= @user.codewars_profile.honor %></p>
-                </div>
-              </div>
-              <div class="profile-data d-flex">
-                <div class="profile-section">
-                  <p>OVERALL RANK</p>
-                </div>
-                <div class="profile-score">
-                  <p><%= @user.codewars_profile.overall_rank_name %></p>
-                </div>
-              </div>
-              <div class="profile-data d-flex" style="align-items: center;">
-                <div class="profile-section">
-                  <p>OVERALL SCORE</p>
-                </div>
-                <div class="profile-score">
-                  <p><%= @user.codewars_profile.overall_score %></p>
-                </div>
-              </div>
-              <div class="profile-data d-flex" style="align-items: center;">
-                <div class="profile-section">
-                  <p>CHALLENGES AUTHORED </p>
-                </div>
-                <div class="profile-score">
-                  <p><%= @user.codewars_profile.code_challenges_authored %></p>
-                </div>
-              </div>
-              <div class="profile-data d-flex" style="align-items: center;">
-                <div class="profile-section">
-                  <p>CHALLENGES COMPLETED </p>
-                </div>
-                <div class="profile-score">
-                  <p><%= @user.codewars_profile.code_challenges_completed %></p>
-                </div>
-              </div>
-              <div class="profile-data d-flex" style="align-items: center;">
-                <div class="profile-section">
-                  <p><%= @user.codewars_profile.first_language_name.upcase! %> </p>
-                </div>
-                <div class="profile-score">
-                  <p><%= @user.codewars_profile.first_language_rank_name %> | score <%= @user.codewars_profile.first_language_score %></p>
-                </div>
-              </div>
-              <% if @user.codewars_profile.second_language_name != 'None chosen' %>
-              <div class="profile-data d-flex" style="align-items: center;">
-                <div class="profile-section">
-                  <p><%= @user.codewars_profile.second_language_name.upcase! %> </p>
-                </div>
-                <div class="profile-score">
-                  <p><%= @user.codewars_profile.second_language_rank_name %> | score <%= @user.codewars_profile.second_language_score%></p>
-                </div>
-              </div>
-              <% end %>
             </div>
           </div>
-
-          <div class="w-47 profile-card">
-            <div class="profile-card-content profile-card-github">
-              <span class="iconify" data-inline="false" data-icon="akar-icons:github-fill" style="font-size: 60px; color: #F3C72A; padding-bottom: 15px; margin-left: 95px"></span>
-              <h6 style="border-bottom: 1px solid #E5E5E5; padding-bottom: 15px; text-align: center;">GitHub Profile</h6>
-                <p class="profile-section" style="margin-top: 13px;"> PUBLIC REPOS</p>
-                <p class="profile-score"> <%= @user.github_profile.public_repos %> </p>
-                <p class="profile-section" style="margin-top: 13px;">PUBLIC GISTS</p>
-                <p class="profile-score"> <%= @user.github_profile.public_gists %> </p>
-                <p class="profile-section" style="margin-top: 13px;">FOLLOWERS</p>
-                <p class="profile-score"> <%= @user.github_profile.followers %> </p>
-                <p class="profile-section" style="margin-top: 13px;"> FOLLOWING </p>
-                <p class="profile-score">  <%= @user.github_profile.following %> </p>
-                <p class="profile-section" style="margin-top: 13px;">JOINED GITHUB</p>
-                <p class="profile-score">  <%= @user.github_profile.joined_github %> </p>
+          <div class="w-47 profile-card" style="background-color: #003366">
+            <div class="profile-card">
+              <div class="profile-card-content profile-card-github">
+                <span class="iconify" data-inline="false" data-icon="akar-icons:github-fill" style="font-size: 60px; color: #FE0760; padding-bottom: 15px;"></span>
+                <h6 style="padding-bottom: 15px;">GitHub Profile</h6>
+                <div class="profile-data d-flex" style="align-items: center;">
+                  <div class="profile-section">
+                    <p> <span class="iconify" data-inline="false" data-icon="si-glyph:champion-cup" style="font-size: 18px; color: #FE0760;"></span> PUBLIC REPOS</p>
+                  </div>
+                  <div class="profile-score">
+                    <p><%= @user.github_profile.public_repos %></p>
+                  </div>
+                </div>
+                <div class="profile-data d-flex" style="align-items: center;">
+                  <div class="profile-section">
+                    <p> <span class="iconify" data-inline="false" data-icon="si-glyph:champion-cup" style="font-size: 18px; color: #FE0760;"></span> PUBLIC GISTS</p>
+                  </div>
+                  <div class="profile-score">
+                    <p><%= @user.github_profile.public_gists %></p>
+                  </div>
+                </div>
+                <div class="profile-data d-flex" style="align-items: center;">
+                  <div class="profile-section">
+                    <p>  FOLLOWERS</p>
+                  </div>
+                  <div class="profile-score">
+                    <p><%= @user.github_profile.followers %></p>
+                  </div>
+                </div>
+                <div class="profile-data d-flex" style="align-items: center;">
+                  <div class="profile-section">
+                    <p> FOLLOWING</p>
+                  </div>
+                  <div class="profile-score">
+                    <p><%= @user.github_profile.following %> </p>
+                  </div>
+                </div>
+                <div class="profile-data d-flex" style="align-items: center;">
+                  <div class="profile-section">
+                    <p> JOINED GITHUB</p>
+                  </div>
+                  <div class="profile-score">
+                    <p><%= @user.github_profile.joined_github %>  </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
       <% else %>
         <%= link_to "Add external profiles", edit_profile_path, :class => "btn-edit-profile" %>
       <% end %>
