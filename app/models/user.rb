@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_one :codewars_profile, dependent: :destroy
   has_one :github_profile, dependent: :destroy
   has_one_attached :avatar
+  has_many :messages, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
