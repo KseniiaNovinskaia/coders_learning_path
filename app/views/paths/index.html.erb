@@ -83,11 +83,8 @@
             <!-- the outer div for the small card which works as a button to call the modal -->
       <div type="button" class="btn" data-toggle="modal" data-target="#<%= id %>">
         <!-- The actual small cards -->
-        <div class="p_card_sm card_sm" id="<%= id %>" style="background-color: #003366">
-
+        <div class="p_card_sm card_sm" id="<%= id %>" style="background-color: #003366; padding-bottom: 100px;">
           <div class="p_card_sm d-flex flex-column text-left">
-            <div class="div-to-do pr-3">
-          </div>
             <div style="margin-left: 20px; margin-top: 15px; ">
               <p>I want to become a</p>
             </div>
@@ -138,7 +135,7 @@
   <!-- The end of small card -->
 <!-- The third child -->
 <div class="parent-div-3 position-absolute" style="right: 0;">
-    <div> <h1 class="girl-assistant-words">Hello, @user who you want to become?</h1> </div>
+    <div> <h1 class="girl-assistant-words"> <strong> HELLO! WHO YOU WANT TO BECOME? </strong></h1> </div>
     <%= cl_image_tag("Home/Group_99_2_iawft8.svg")%>
 </div>
 <!-- End of grid -->

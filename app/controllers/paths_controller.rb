@@ -36,3 +36,5 @@ class PathsController < ApplicationController
     @path_progress = (done.fdiv(@path.duration) * 100).ceil.to_s
   end
 end
+
+
