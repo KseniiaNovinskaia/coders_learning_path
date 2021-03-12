@@ -2,6 +2,8 @@ class ProfilesController < ApplicationController
   def show
     @user = User.find_by(name: params[:user_name])
     authorize @user
+    @codewars_profile = CodewarsProfile.new
+    @github_profile = GithubProfile.new
     # @codewars_profile = CodewarsProfile.new
   end
 
@@ -10,8 +12,8 @@ class ProfilesController < ApplicationController
   def edit
     @user = User.find_by(name: params[:user_name])
     authorize @user
-    @codewars_profile = CodewarsProfile.new
-    @github_profile = GithubProfile.new
+    # @codewars_profile = CodewarsProfile.new
+    # @github_profile = GithubProfile.new
   end
 
   # I am not implementing the update method yet, because there is no information

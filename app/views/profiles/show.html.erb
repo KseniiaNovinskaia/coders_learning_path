@@ -57,127 +57,154 @@ OF THE CARDS CAN HAPPEN BEFORE THAT DECISION. -->
 
 <!-- These are divs for user's external profiles -->
 
-      <h2 style="margin-top: 36px; margin-bottom: 46px;">YOUR EXTERNAL PROFILES</h2>
-      <% if @user.codewars_profile %>
+      <h2 style="margin-top: 36px; margin-bottom: 0.8em;">YOUR EXTERNAL PROFILES</h2>
+
+      <div class="add-external-profile-form-container d-flex flex-start">
+        <% if current_user.codewars_profile.nil? %>
+          <!-- <h2 style="margin-top: 46px; margin-bottom: 20px;">Please add your <span style="background-color: #A9DCDB">Codewars</span> username</h2> -->
+          <div class="external-profile-form-container">
+            <%= simple_form_for (@codewars_profile) do |f| %>
+              <%= f.input :user_name, label: false, placeholder: 'CodeWars username', input_html: { class: 'profile-input' } %>
+              <%= f.submit 'Add Codewars profile', class: 'btn-edit-profile' %>
+            <% end %>
+          </div>
+        <% end %>
+
+        <% if current_user.github_profile.nil? %>
+          <div class="external-profile-form-container">
+            <%= simple_form_for (@github_profile) do |f| %>
+              <%= f.input :user_name, label: false, placeholder: 'GitHub username', input_html: { class: 'profile-input' } %>
+              <%= f.submit 'Add GitHub profile', class: 'btn-edit-profile' %>
+            <% end %>
+          </div>
+          <!-- <h2 style="margin-top: 46px; margin-bottom: 20px;">Please add your <span style="background-color: #A9DCDB">GitHub</span> username</h2> -->
+        <% end %>
+      </div>
+
+      <% if @user.codewars_profile || @user.github_profile %>
         <div class="d-flex justify-content-between">
-          <div class="w-47 profile-card" style="background-color: #003366">
-            <div class="profile-card">
-              <div class="profile-card-content codewars">
-                <div class="icon-profile">
-                  <span class="iconify" data-inline="false" data-icon="cib:codewars" style="font-size: 60px; color: #FE0760; padding-bottom: 15px;"></span>
-                  <h6 style="padding-bottom: 14px; padding-left: -20px;">Codewars Profile</h6>
-                </div>
-                <div class="profile-data d-flex" style="align-items: center;">
-                  <div class="profile-section">
-                    <p> <span class="iconify" data-inline="false" data-icon="si-glyph:champion-cup" style="font-size: 18px; color: #FE0760;"></span> HONORS</p>
+          <% if @user.codewars_profile %>
+            <div class="w-47 profile-card" style="background-color: #003366">
+              <div class="profile-card">
+                <div class="profile-card-content codewars">
+                  <div class="icon-profile">
+                    <span class="iconify" data-inline="false" data-icon="cib:codewars" style="font-size: 60px; color: #FE0760; padding-bottom: 15px;"></span>
+                    <h6 style="padding-bottom: 14px; padding-left: -20px;">Codewars Profile</h6>
                   </div>
-                  <div class="profile-score">
-                    <p><%= @user.codewars_profile.honor %></p>
+                  <div class="profile-data d-flex" style="align-items: center;">
+                    <div class="profile-section">
+                      <p> <span class="iconify" data-inline="false" data-icon="si-glyph:champion-cup" style="font-size: 18px; color: #FE0760;"></span> HONORS</p>
+                    </div>
+                    <div class="profile-score">
+                      <p><%= @user.codewars_profile.honor %></p>
+                    </div>
                   </div>
-                </div>
-                <div class="profile-data d-flex">
-                  <div class="profile-section">
-                    <p><span class="iconify" data-inline="false" data-icon="si-glyph:champion-cup" style="font-size: 18px; color: #FE0760;"></span> OVERALL RANK</p>
+                  <div class="profile-data d-flex">
+                    <div class="profile-section">
+                      <p><span class="iconify" data-inline="false" data-icon="si-glyph:champion-cup" style="font-size: 18px; color: #FE0760;"></span> OVERALL RANK</p>
+                    </div>
+                    <div class="profile-score">
+                      <p><%= @user.codewars_profile.overall_rank_name %></p>
+                    </div>
                   </div>
-                  <div class="profile-score">
-                    <p><%= @user.codewars_profile.overall_rank_name %></p>
+                  <div class="profile-data d-flex" style="align-items: center;">
+                    <div class="profile-section">
+                      <p> <span class="iconify" data-inline="false" data-icon="si-glyph:champion-cup" style="font-size: 18px; color: #FE0760;"></span> OVERALL SCORE</p>
+                    </div>
+                    <div class="profile-score">
+                      <p><%= @user.codewars_profile.overall_score %></p>
+                    </div>
                   </div>
-                </div>
-                <div class="profile-data d-flex" style="align-items: center;">
-                  <div class="profile-section">
-                    <p> <span class="iconify" data-inline="false" data-icon="si-glyph:champion-cup" style="font-size: 18px; color: #FE0760;"></span> OVERALL SCORE</p>
+                  <div class="profile-data d-flex" style="align-items: center;">
+                    <div class="profile-section">
+                      <p>CHALLENGES AUTHORED </p>
+                    </div>
+                    <div class="profile-score">
+                      <p><%= @user.codewars_profile.code_challenges_authored %></p>
+                    </div>
                   </div>
-                  <div class="profile-score">
-                    <p><%= @user.codewars_profile.overall_score %></p>
+                  <div class="profile-data d-flex" style="align-items: center;">
+                    <div class="profile-section">
+                      <p>CHALLENGES COMPLETED </p>
+                    </div>
+                    <div class="profile-score">
+                      <p><%= @user.codewars_profile.code_challenges_completed %></p>
+                    </div>
                   </div>
-                </div>
-                <div class="profile-data d-flex" style="align-items: center;">
-                  <div class="profile-section">
-                    <p>CHALLENGES AUTHORED </p>
+                  <div class="profile-data d-flex" style="align-items: center;">
+                    <div class="profile-section">
+                      <p><%= @user.codewars_profile.first_language_name.upcase! %> </p>
+                    </div>
+                    <div class="profile-score">
+                      <p><%= @user.codewars_profile.first_language_rank_name %> [<%= @user.codewars_profile.first_language_score %>]</p>
+                    </div>
                   </div>
-                  <div class="profile-score">
-                    <p><%= @user.codewars_profile.code_challenges_authored %></p>
+                  <% if @user.codewars_profile.second_language_name != 'None chosen' %>
+                  <div class="profile-data d-flex" style="align-items: center;">
+                    <div class="profile-section">
+                      <p><%= @user.codewars_profile.second_language_name.upcase! %> </p>
+                    </div>
+                    <div class="profile-score">
+                      <p><%= @user.codewars_profile.second_language_rank_name %> [<%= @user.codewars_profile.second_language_score%>]</p>
+                    </div>
                   </div>
-                </div>
-                <div class="profile-data d-flex" style="align-items: center;">
-                  <div class="profile-section">
-                    <p>CHALLENGES COMPLETED </p>
-                  </div>
-                  <div class="profile-score">
-                    <p><%= @user.codewars_profile.code_challenges_completed %></p>
-                  </div>
-                </div>
-                <div class="profile-data d-flex" style="align-items: center;">
-                  <div class="profile-section">
-                    <p><%= @user.codewars_profile.first_language_name.upcase! %> </p>
-                  </div>
-                  <div class="profile-score">
-                    <p><%= @user.codewars_profile.first_language_rank_name %> [<%= @user.codewars_profile.first_language_score %>]</p>
-                  </div>
-                </div>
-                <% if @user.codewars_profile.second_language_name != 'None chosen' %>
-                <div class="profile-data d-flex" style="align-items: center;">
-                  <div class="profile-section">
-                    <p><%= @user.codewars_profile.second_language_name.upcase! %> </p>
-                  </div>
-                  <div class="profile-score">
-                    <p><%= @user.codewars_profile.second_language_rank_name %> [<%= @user.codewars_profile.second_language_score%>]</p>
-                  </div>
-                </div>
-                <% end %>
-              </div>
-            </div>
-          </div>
-          <div class="w-47 profile-card" style="background-color: #003366">
-            <div class="profile-card">
-              <div class="profile-card-content profile-card-github">
-                <span class="iconify" data-inline="false" data-icon="akar-icons:github-fill" style="font-size: 60px; color: #FE0760; padding-bottom: 15px;"></span>
-                <h6 style="padding-bottom: 15px;">GitHub Profile</h6>
-                <div class="profile-data d-flex" style="align-items: center;">
-                  <div class="profile-section">
-                    <p> <span class="iconify" data-inline="false" data-icon="si-glyph:champion-cup" style="font-size: 18px; color: #FE0760;"></span> PUBLIC REPOS</p>
-                  </div>
-                  <div class="profile-score">
-                    <p><%= @user.github_profile.public_repos %></p>
-                  </div>
-                </div>
-                <div class="profile-data d-flex" style="align-items: center;">
-                  <div class="profile-section">
-                    <p> <span class="iconify" data-inline="false" data-icon="si-glyph:champion-cup" style="font-size: 18px; color: #FE0760;"></span> PUBLIC GISTS</p>
-                  </div>
-                  <div class="profile-score">
-                    <p><%= @user.github_profile.public_gists %></p>
-                  </div>
-                </div>
-                <div class="profile-data d-flex" style="align-items: center;">
-                  <div class="profile-section">
-                    <p>  FOLLOWERS</p>
-                  </div>
-                  <div class="profile-score">
-                    <p><%= @user.github_profile.followers %></p>
-                  </div>
-                </div>
-                <div class="profile-data d-flex" style="align-items: center;">
-                  <div class="profile-section">
-                    <p> FOLLOWING</p>
-                  </div>
-                  <div class="profile-score">
-                    <p><%= @user.github_profile.following %> </p>
-                  </div>
-                </div>
-                <div class="profile-data d-flex" style="align-items: center;">
-                  <div class="profile-section">
-                    <p> JOINED GITHUB</p>
-                  </div>
-                  <div class="profile-score">
-                    <p><%= @user.github_profile.joined_github %>  </p>
-                  </div>
+                  <% end %>
                 </div>
               </div>
             </div>
-          </div>
-      <% else %>
-        <%= link_to "Add external profiles", edit_profile_path, :class => "btn-edit-profile" %>
+          <% end %>
+          <% if @user.github_profile %>
+            <div class="w-47 profile-card" style="background-color: #003366">
+              <div class="profile-card">
+                <div class="profile-card-content profile-card-github">
+                  <span class="iconify" data-inline="false" data-icon="akar-icons:github-fill" style="font-size: 60px; color: #FE0760; padding-bottom: 15px;"></span>
+                  <h6 style="padding-bottom: 15px;">GitHub Profile</h6>
+                  <div class="profile-data d-flex" style="align-items: center;">
+                    <div class="profile-section">
+                      <p> <span class="iconify" data-inline="false" data-icon="si-glyph:champion-cup" style="font-size: 18px; color: #FE0760;"></span> PUBLIC REPOS</p>
+                    </div>
+                    <div class="profile-score">
+                      <p><%= @user.github_profile.public_repos %></p>
+                    </div>
+                  </div>
+                  <div class="profile-data d-flex" style="align-items: center;">
+                    <div class="profile-section">
+                      <p> <span class="iconify" data-inline="false" data-icon="si-glyph:champion-cup" style="font-size: 18px; color: #FE0760;"></span> PUBLIC GISTS</p>
+                    </div>
+                    <div class="profile-score">
+                      <p><%= @user.github_profile.public_gists %></p>
+                    </div>
+                  </div>
+                  <div class="profile-data d-flex" style="align-items: center;">
+                    <div class="profile-section">
+                      <p>  FOLLOWERS</p>
+                    </div>
+                    <div class="profile-score">
+                      <p><%= @user.github_profile.followers %></p>
+                    </div>
+                  </div>
+                  <div class="profile-data d-flex" style="align-items: center;">
+                    <div class="profile-section">
+                      <p> FOLLOWING</p>
+                    </div>
+                    <div class="profile-score">
+                      <p><%= @user.github_profile.following %> </p>
+                    </div>
+                  </div>
+                  <div class="profile-data d-flex" style="align-items: center;">
+                    <div class="profile-section">
+                      <p> JOINED GITHUB</p>
+                    </div>
+                    <div class="profile-score">
+                      <p><%= @user.github_profile.joined_github %>  </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+      <%# else %>
+        <%#= link_to "Add external profiles", edit_profile_path, :class => "btn-edit-profile" %>
       <% end %>
     </div>
   </div>

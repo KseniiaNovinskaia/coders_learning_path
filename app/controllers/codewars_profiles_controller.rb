@@ -28,7 +28,8 @@ class CodewarsProfilesController < ApplicationController
     authorize @codewars_profile
 
     if @codewars_profile.save
-      redirect_to edit_profile_path(current_user.name)
+      # redirect_to edit_profile_path(current_user.name)
+      redirect_to user_profile_path(current_user.name)
       # render nothing: true // this did not work.
     else
       redirect_to user_profile_path(current_user.name)
