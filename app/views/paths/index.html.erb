@@ -92,13 +92,16 @@
         <!-- The actual small cards -->
         <div class="p_card_sm card_sm" id="<%= id %>" style="background-color: #003366; padding-bottom: 100px;">
           <div class="p_card_sm d-flex flex-column text-left">
+            <div class="done-icon">
+              <img class="d-block w-100" src="https://res.cloudinary.com/dqopwdgta/image/upload/c_scale,w_90/v1615634796/Group_111_pzx7fh.svgg" id_="ml_developer" alt="done-icon">
+            </div>
             <div style="margin-left: 20px; margin-top: 15px; ">
               <p>I want to become a</p>
             </div>
             <div style="margin-left: 20px; margin-top: -8px; font-size: 27px; ">
               <h6><%= path.name %></h6>
             </div>
-            <div class="d-flex flex-grow-1 text-center pb-3" style="align-items: flex-end; justify-content: center;">
+            <div class="d-flex flex-grow-1 text-center pb-3" style="align-items: center; justify-content: center;">
               <% if path.name == "Full Stack Developer" %>
                 <%= cl_image_tag("Index/FULL_STACK_DEVELOPER_pmau6g.svg")%>
               <% elsif path.name == "Frontend Developer" %>
@@ -110,6 +113,7 @@
               <% end %>
             </div>
             <div class="d-flex justify-content-between div-info" style="border-top: 1px solid #003366;">
+
               <div>
                 <% if path.requirement == "beginner" %>
                   <div class="d-flex align-items-center" style="margin-left: 20px; margin-top: 15px;">
@@ -140,7 +144,7 @@
   <!-- The end of small card -->
 <!-- The third child -->
 <div class="parent-div-3 position-absolute" style="right: 0;">
-    <div> <h1 class="girl-assistant-words"> <strong> HELLO! WHO YOU WANT TO BECOME? </strong></h1> </div>
+    <div> <h1 class="girl-assistant-words"> <strong> HELLO! WHO DO YOU WANT TO BECOME? </strong></h1> </div>
     <%= cl_image_tag("Home/Group_99_2_iawft8.svg")%>
 </div>
 <!-- End of grid -->

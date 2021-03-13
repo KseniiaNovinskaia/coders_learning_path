@@ -12,7 +12,11 @@
 .p_card_sm_img {
   width: 120px;
   height: 237px;
+  padding-bottom: 20px;
+  vertical-align: middle;
 }
+
+
 
 .p_card_sm:hover{
   //transform: translate(4px);
@@ -39,5 +43,15 @@
     border-bottom: 1px solid $text-color;
     background-color: $hero-color;
     text-align: right;
-
   }
+
+
+.done-icon {
+    height: 90px;
+    width: 90px;
+    justify-item: end;
+}
+
+
+
+
