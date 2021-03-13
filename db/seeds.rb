@@ -19,9 +19,9 @@ p "Created the USER '#{u.name}', email: '#{u.email}', password: '123456'"
 
   p2 = Path.create!(
     name: 'Frontend Developer',
-    description: 'Machine Learning is an increasingly hot field of data science dedicated to enabling computers to learn from data. From spam filtering in social networks to computer vision for self-driving cars, the potential applications of Machine Learning are vast.',
+    description: 'Frontend development is more popular than ever during times of booming eCommerce. Determining the structure and design of web pages, you need to find a balance between functional and aesthetic design.',
     requirement: 'beginner',
-    language: 'python'
+    language: 'javascript html css'
    )
 
 p = Path.create!(
@@ -176,7 +176,7 @@ steps_data_second = [
   {
     url: 'https://www.codecademy.com/learn/learn-html',
     description: 'Learn the basics of HTML5 and start building & editing web pages.',
-    title: 'Linear Regression',
+    title: 'Basics of HTML and CSS',
     step_type: 'codecademy',
     duration: 920
   },
@@ -190,14 +190,14 @@ steps_data_second = [
   {
     url: 'https://www.youtube.com/watch?v=x3c1ih2NJEg',
     description: 'How does the Internet work? The video you are watching now traveled thousands of miles from a Google data center to reach you. Let’s learn how the Internet works by getting to understand the details of this data’s incredible journey.',
-    title: 'Decision Trees',
+    title: 'Making a Website Responsive',
     step_type: 'video',
     duration: 250
   },
   {
     url: 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/',
     description: 'A comprehensive guide to CSS flexbox layout. This complete guide explains everything about flexbox, focusing on all the different possible properties for the parent element (the flex container) and the child elements (the flex items). It also includes history, demos, patterns, and a browser support chart.',
-    title: 'Clustering: K-Means',
+    title: 'JavaScript Syntax',
     step_type: 'article',
     duration: 360
   },
@@ -207,7 +207,7 @@ steps_data_second = [
 Since Ruby has very little to no syntax, It is the most easiest language to learn any programming language.
 If you are new to programming or have no prior knowledge about programming, then look nowhere.
 This course is totally dedicated and planned for new comers who wants to learn programming and there is no any other simpler language than "Ruby" to learn programming.',
-    title: 'Perceptron',
+    title: 'CSS Transitions and Animation',
     step_type: 'udemy',
     duration: 720
   },
@@ -220,7 +220,7 @@ Why?
 Because OOP is all about how you design & organize your code.
 You create classes that represent concepts in your program.
 And each class is responsible for doing something.',
-    title: 'Artificial Intelligence Decision Making',
+    title: 'Web Apps',
     step_type: 'article',
     duration: 640
   }
