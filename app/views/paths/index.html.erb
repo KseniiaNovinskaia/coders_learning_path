@@ -92,13 +92,18 @@
         <!-- The actual small cards -->
         <div class="p_card_sm card_sm" id="<%= id %>" style="background-color: #003366; padding-bottom: 100px;">
           <div class="p_card_sm d-flex flex-column text-left">
+            <% if path.name == "Frontend Developer" %>
+              <div class="div-to-do pl-3 text-center" id="ml-developer">
+                <p> YOU COMPLETED THIS PATH <span class="iconify" data-inline="false" data-icon="si-glyph:champion-cup" style="font-size: 30px; color: #F3C72A;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1.07em" height="1em" style="font-size: 30px; color: rgb(243, 199, 42); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 17 16" class="iconify" data-inline="false" data-icon="si-glyph:champion-cup"><path d="M11.969 1H3.082v1.031h-3.09v4.836c0 1.869 2.086 3.407 4.133 3.567c.672.72 1.854 1.243 2.906 1.466v1.264c-1.006.309-2.803 1.035-2.906 1.826h6.904c-.104-.791-2.084-1.518-3.092-1.826V11.9c1.056-.223 2.291-.746 2.964-1.466c2.046-.16 4.04-1.698 4.04-3.567V2.031h-2.972V1zM.941 2.947H3.01v4.166c0 .822.212 1.604.585 2.308C2.047 8.928.941 7.658.941 6.172V2.947zm8.104 5.081l-1.544-.851l-1.546.851l.295-1.8L5 4.954l1.727-.263l.774-1.636l.772 1.636L10 4.954L8.75 6.228l.295 1.8zm2.295 1.526c.375-.736.59-1.55.59-2.411V2.974h2.074V6.16c0 1.553-1.111 2.879-2.664 3.394z" fill="currentColor" fill-rule="evenodd"></path></svg></span></p>
+              </div>
+            <% end %>
             <div style="margin-left: 20px; margin-top: 15px; ">
               <p>I want to become a</p>
             </div>
             <div style="margin-left: 20px; margin-top: -8px; font-size: 27px; ">
               <h6><%= path.name %></h6>
             </div>
-            <div class="d-flex flex-grow-1 text-center pb-3" style="align-items: flex-end; justify-content: center;">
+            <div class="d-flex flex-grow-1 text-center pb-3" style="align-items: center; justify-content: center;">
               <% if path.name == "Full Stack Developer" %>
                 <%= cl_image_tag("Index/FULL_STACK_DEVELOPER_pmau6g.svg")%>
               <% elsif path.name == "Frontend Developer" %>
@@ -110,6 +115,7 @@
               <% end %>
             </div>
             <div class="d-flex justify-content-between div-info" style="border-top: 1px solid #003366;">
+
               <div>
                 <% if path.requirement == "beginner" %>
                   <div class="d-flex align-items-center" style="margin-left: 20px; margin-top: 15px;">
