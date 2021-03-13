@@ -24,4 +24,3 @@ class StepProgressesController < ApplicationController
 end
 
 
-
