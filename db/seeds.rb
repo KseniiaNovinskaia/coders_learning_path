@@ -417,7 +417,7 @@ Step.all.each_with_index do |step, i|
   StepProgress.create!(
     user_id: User.find_by(name: u.name).id,
     step_id: step.id,
-    completion: i < 6,
+    completion: i < 4,
     path_id: p.id
     )
 end
