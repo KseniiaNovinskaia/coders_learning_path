@@ -36,7 +36,6 @@
   bottom: 7px;
 }
 
-
 .profile-card {
   box-sizing: border-box;
   height: 75%;
@@ -95,7 +94,6 @@
   border: 2px solid $text-color;
 }
 
-
 .profile-section {
   width: 200px;
   font-weight: bolder;
@@ -134,3 +132,17 @@
   align-items: center;
  }
 
+.codewars_profile_user_name, .github_profile_user_name{
+  margin-bottom: .5rem;
+}
+
+#codewars_profile_user_name:focus, #github_profile_user_name:focus {
+  box-shadow: none;
+  border: 2px solid rgba($text-color, 0.5);
+}
+
+.external-profile-form-container {
+  width: 250px;
+  margin-right: 4rem;
+  margin-bottom: 2rem;
+}

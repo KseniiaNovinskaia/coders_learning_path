@@ -64,7 +64,6 @@
      border: 3px solid $text-color;
  }
 
-
  .btn-modal {
   padding: 10px 42px;
   color: $cb-white;
@@ -94,14 +93,22 @@
   }
 
 .btn-edit-profile {
-  padding: 15px 32px;
-  border-radius: 4px;
-  border: 1px solid $text-color;
+  padding: .5em 1em;
+  font-weight: bold;
+  border: none;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  background-color: transparent;
+  background-color: $text-color;
+  color: white;
+  box-sizing: border-box;
+  width: 100%;
   @extend p;
+
+  &:hover {
+    text-decoration: none;
+    opacity: 0.85;
+  }
 }
 
 #toggle-chat-button {
