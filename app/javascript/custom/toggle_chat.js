@@ -11,6 +11,7 @@ const initToggleChatEventListener = () => {
       chat.classList.toggle('invisible');
       showChatButton.classList.toggle('invisible');
       hideChatButton.classList.toggle('invisible');
+
     });
   }
 }
