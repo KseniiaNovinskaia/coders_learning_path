@@ -35,6 +35,7 @@
       } %>
      <div id="path_show_chatroom" class="chatroom-container visible">
        <h4>#<%= @chatroom.name %></h4>
+
          <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
             <% @chatroom.messages.reverse[0..2].each do |message| %>
             <%= render 'messages/message', message: message %>
