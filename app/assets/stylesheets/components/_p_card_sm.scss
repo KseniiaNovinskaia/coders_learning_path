@@ -35,11 +35,13 @@
 }
 
   .div-to-do {
+    //display: none;
     p {
       font-size: 15px;
-      color: white;
+      color: $text-color;
+      padding-top: 8px;
     }
-    height: 25px;
+    height: 50px;
     border-bottom: 1px solid $text-color;
     background-color: $hero-color;
     text-align: right;
